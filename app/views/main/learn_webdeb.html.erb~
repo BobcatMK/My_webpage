@@ -1,0 +1,6 @@
+<%= content_for(:title, "MK Web development") %>
+
+<%= link_to("Contact page",controller: "main", action: "contact") %>
+<%= link_to("Books & Courses", controller: "main", action: "books_courses") %>
+<%= link_to("Motivation", controller: "main", action: "motivation") %>
+<%= link_to("About", controller: "main", action: "about") %>

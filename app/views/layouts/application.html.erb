@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MyWebpage</title>
+	<title><%= yield(:title) %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<%= link_to("Contact page",controller: "main", action: "contact") %>
+<%= link_to("Books & Courses", controller: "main", action: "books_courses") %>
+<%= link_to("Motivation", controller: "main", action: "motivation") %>
+<%= link_to("About", controller: "main", action: "about") %>
+<%= link_to("Web development", controller: "main", action: "learn_webdeb") %>
 <%= yield %>
 
 </body>
