@@ -15,3 +15,10 @@
 body {
 	background-color: skyblue;
 }
+.up {
+	background-color: tomato;
+	width: 110vw;
+	height: 3vh;
+	margin-left: -10px;
+	margin-top: -10px;
+}

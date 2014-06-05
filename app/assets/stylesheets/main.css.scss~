@@ -91,14 +91,14 @@ body { // ustala kolor calego tla
 	margin-left: -10px;
 	width: 4vw;
 	height: 300vh;
-	background-color: #F9F7FA;
+	background-color: #E7E6E8;
 	float:left;
 }
 #column_right {
 	margin-right: -10px;
 	width: 4vw;
 	height: 300vh;
-	background-color: #F9F7FA;
+	background-color: #E7E6E8;
 	float:right;
 }
 	
