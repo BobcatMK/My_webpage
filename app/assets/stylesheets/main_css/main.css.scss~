@@ -94,7 +94,7 @@
 }
 #column_left { //lewa kolumna
 	margin-left: -10px;
-	width: 16vw;
+	width: 12vw;
 	height: 300vh;
 	background-color: #F9F7FA;
 	float:left;
@@ -102,7 +102,7 @@
 }
 #column_right { //prawa kolumna
 	margin-right: -8px;
-	width: 16vw;
+	width: 12vw;
 	height: 300vh;
 	background-color: #F9F7FA;
 	float:right;

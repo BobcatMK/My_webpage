@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title><%= yield(:title) %></title>
-  <%= stylesheet_link_tag    "main_css/application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "main_css/application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
@@ -11,10 +11,8 @@
 	<link href='http://fonts.googleapis.com/css?family=Cabin+Condensed:600' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<div class="up"></div>
 <div class="menu">
-	<div id="logo">Matthew <br />Kilan</div>
-	<div id="short_text">Passionate programmer<br />and entrepreneur</div>
+	<div id="logo">Matthew Kilan<p id="font_opis">Passionate programmer and entrepreneur</p></div>
 
 	<%= link_to(controller: "main", action: "learn_webdeb") do %>
 		<div class="menu_text web">Web development</div>
@@ -39,8 +37,7 @@
 </div>
 	<div id="column_left"></div>
 	<div id="column_right"></div>
-	<p> asdfaaaaaaaaaaaaaaaaaaaaaaaaasdasdfasdfsdfsdafdsfasdfdf</p>
-<%= yield %>
-
+	<div id="column_horizontal"></div>
+	<%= yield %>
 </body>
 </html>
