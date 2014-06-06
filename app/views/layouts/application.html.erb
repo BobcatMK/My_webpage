@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title><%= yield(:title) %></title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "main_css/application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
@@ -14,12 +14,28 @@
 <div class="up"></div>
 <div class="menu">
 	<div id="logo">Matthew <br />Kilan</div>
-	<div id="short_text">Passionate programmer<br />Life enthusiast, Blogger</div>
-	<div class="menu_text web"><%= link_to("Web development",controller: "main", action: "learn_webdeb") %></div>
-	<div class="menu_text motivation"><%= link_to("Motivation",controller: "main", action: "motivation") %></div>
-	<div class="menu_text projects"><%= link_to("Projects<br />& About".html_safe,controller: "main",action: "about") %></div>
-	<div class="menu_text books"><%= link_to("Books & Courses", controller: "main", action: "books_courses") %></div>
-	<div class="menu_text contact"><%= link_to("Contact", controller: "main", action: "contact") %></div>
+	<div id="short_text">Passionate programmer<br />and entrepreneur</div>
+
+	<%= link_to(controller: "main", action: "learn_webdeb") do %>
+		<div class="menu_text web">Web development</div>
+	<% end %>
+
+	<%= link_to(controller: "main", action: "motivation") do %>
+		<div class="menu_text motivation">Motivation</div>
+	<% end %>
+
+	<%= link_to(controller: "main", action: "about") do %>
+		<div class="menu_text projects">Projects<br />& About</div>
+	<% end %>
+
+	<%= link_to(controller: "main", action: "books_courses") do %>
+		<div class="menu_text books">Books & Courses</div>
+	<% end %>
+
+	<%= link_to(controller: "main", action: "contact") do %>
+		<div class="menu_text contact">Contact</div>
+	<% end %>
+
 </div>
 	<div id="column_left"></div>
 	<div id="column_right"></div>

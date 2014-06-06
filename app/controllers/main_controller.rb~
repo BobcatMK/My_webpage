@@ -6,6 +6,7 @@ class MainController < ApplicationController
   end
 
   def about
+		stylesheet_link_tag "about"
   end
 
   def books_courses
