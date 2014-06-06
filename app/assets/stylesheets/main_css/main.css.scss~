@@ -94,17 +94,15 @@
 }
 #column_left { //lewa kolumna
 	margin-left: -10px;
-	width: 12vw;
+	width: 16vw;
 	height: 300vh;
 	background-color: #F9F7FA;
 	float:left;
-	border-right: 1px solid black;
 }
 #column_right { //prawa kolumna
 	margin-right: -8px;
-	width: 12vw;
+	width: 16vw;
 	height: 300vh;
 	background-color: #F9F7FA;
 	float:right;
-	border-left: 1px solid black;
 }
