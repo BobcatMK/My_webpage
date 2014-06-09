@@ -11,7 +11,7 @@
 	position: initial;
 }
 #logo { // Moje logo Matthew Kilan
-	font-family: 'Lobster';
+	font-family: 'Lato';
 	letter-spacing: 2px;
 	position: relative;
 	left: 20px;
@@ -20,6 +20,7 @@
 	float:left;
 	font-size: 150%;
 	line-height: 0.3;
+	font-weight: 900;
 }
 /*#short_text { // Krotki opis przedstawiajacy moja osobe, ten obok loga
 	font-family: 'Lobster';
@@ -33,28 +34,32 @@
 }*/
 
 #font_opis { // krotki tekst opisujacy mnie, ten pod logo
-	font-family: 'Lobster';
+	font-family: 'Ubuntu';
 	font-size: 0.6em;
 	margin-left: 10px;
+	letter-spacing: .5px;
+	font-weight: 700;
 }
 
 .menu_text { // cale menu tekstowe strony
 	color: #fff;
 	position: relative;
 	top: 30px;
-	left: 40px;
+	left: 90px;
 	float:left;
 	margin-left: 40px;
-	font-weight: bold;
+	font-weight: initial;
 	text-align: center;
+	font-family: 'Ubuntu';
+  letter-spacing: -0.2px;
+  font-size: 1em;
 }
 .web,
 .motivation,
 .projects,
 .books,
 .contact { // parametry menu zwiazane z przejsciem
-	font-family: 'Cabin Condensed';
-	letter-spacing: 1px;
+	
 	height: 7vh;
 	width: 13vw;
 	line-height: 44px;
