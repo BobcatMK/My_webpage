@@ -18,23 +18,23 @@
 <div class="menu">
 	<div id="logo">MATTHEW KILAN<p id="font_opis">Programmer and entrepreneur</p></div>
 
-	<%= link_to(controller: "main", action: "learn_webdeb") do %>
+	<%= link_to(learn_webdeb_path) do %>
 		<div class="menu_text web">Web development</div>
 	<% end %>
 
-	<%= link_to(controller: "main", action: "motivation") do %>
+	<%= link_to(motivation_path) do %>
 		<div class="menu_text motivation">Motivation</div>
 	<% end %>
 
-	<%= link_to(controller: "main", action: "about") do %>
+	<%= link_to(about_path) do %>
 		<div class="menu_text projects">Projects<br />& About</div>
 	<% end %>
 
-	<%= link_to(controller: "main", action: "books_courses") do %>
+	<%= link_to(books_courses_path) do %>
 		<div class="menu_text books">Books & Courses</div>
 	<% end %>
 
-	<%= link_to(controller: "main", action: "contact") do %>
+	<%= link_to(contact_path) do %>
 		<div class="menu_text contact">Contact</div>
 	<% end %>
 
