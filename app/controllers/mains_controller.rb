@@ -1,4 +1,4 @@
-class MainController < ApplicationController
+class MainsController < ApplicationController
   def learn_webdeb
   end
 

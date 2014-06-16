@@ -1,10 +1,10 @@
 MyWebpage::Application.routes.draw do
-	root 'main#learn_webdeb'
-	match "learn_webdeb", to:"main#learn_webdeb", via: "get"
-	match "motivation", to:"main#motivation", via: "get"
-	match "about", to: "main#about", via: "get"
-	match "books_courses", to: "main#books_courses", via: "get"
-	match "contact", to: "main#contact", via: "get"
+	root 'mains#learn_webdeb'
+	match "learn_webdeb", to:"mains#learn_webdeb", via: "get"
+	match "motivation", to:"mains#motivation", via: "get"
+	match "about", to: "mains#about", via: "get"
+	match "books_courses", to: "mains#books_courses", via: "get"
+	match "contact", to: "mains#contact", via: "get"
 	
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
