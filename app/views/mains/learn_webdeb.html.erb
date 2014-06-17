@@ -21,4 +21,45 @@
 
 <div class="hr">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div>
 
+<table class="table">
+	<thead>
+		<tr>
+			<th>Name:</th>
+			<th>Comment:</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @mains.each do |main| %>
+			<tr>
+				<td><%= main.title %></td>
+				<td><%= main.body %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<%= form_for(@main) do |main| %>
+
+	<div>
+		<%= main.label :title %>
+		<%= main.text_field :title %>
+	</div>
+	<div>
+		<%= main.label :body %>
+		<%= main.text_area :body %>
+	</div>
+	<div>
+		<%= main.submit %>
+	</div>
+	
+	<% if @main.errors.any? %>
+	<div>
+		<!-- ><h2><%= pluralize(@main.errors.count, "error") %> prohibited this post from being saved:</h2> -->
+		<% @main.errors.full_messages.each do |msg| %>
+			<p><%= msg %></p>
+		<% end %>
+	</div>
+<% end %>
+
+<% end %>
 
