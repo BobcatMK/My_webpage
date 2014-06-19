@@ -2,33 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body { // ustala kolor calego tla
-	background-color: initial;
-}
-.up { // szeroki i niski pasek na samej gorze strony
-	background-color: #F9F7FA;
-	width: 110vw;
-	height: 3vh;
-	margin-left: -10px;
-	margin-top: -10px;
-}
 .menu { // czarne menu
 	background-color: black;
-	width: 110vw;
-	height: 12vh;
-	margin-left: -10px;
+	width: 99vw;
+	height: 16vh;
+	margin-left: -8px;
+	margin-top: -10px;
+	position: initial;
 }
 #logo { // Moje logo Matthew Kilan
 	font-family: 'Lobster';
 	letter-spacing: 2px;
 	position: relative;
 	left: 20px;
-	top: 8px;
+	top: 35px;
 	color: #fff;
 	float:left;
 	font-size: 150%;
+	line-height: 0.3;
 }
-#short_text { // Krotki opis przedstawiajacy moja osobe, ten obok loga
+/*#short_text { // Krotki opis przedstawiajacy moja osobe, ten obok loga
 	font-family: 'Lobster';
 	font-size: 110%;
 	letter-spacing: 1px;
@@ -37,12 +30,19 @@ body { // ustala kolor calego tla
 	left: 60px;
 	top: 15px;
 	float:left;
+}*/
+
+#font_opis { // krotki tekst opisujacy mnie, ten pod logo
+	font-family: 'Lobster';
+	font-size: 0.6em;
+	margin-left: 10px;
 }
+
 .menu_text { // cale menu tekstowe strony
 	color: #fff;
 	position: relative;
-	top: 16px;
-	left: 100px;
+	top: 30px;
+	left: 40px;
 	float:left;
 	margin-left: 40px;
 	font-weight: bold;
@@ -87,19 +87,22 @@ body { // ustala kolor calego tla
 	background-color: #166ACE;
 	transition: background-color, .5s;
 }
+#column_horizontal {
+	background-color: #F9F7FA;
+	height: 5vh;
+	border-bottom: 1px solid black;
+}
 #column_left { //lewa kolumna
 	margin-left: -10px;
-	width: 6vw;
+	width: 16vw;
 	height: 300vh;
 	background-color: #F9F7FA;
 	float:left;
 }
 #column_right { //prawa kolumna
-	margin-right: -10px;
-	width: 6vw;
+	margin-right: -8px;
+	width: 16vw;
 	height: 300vh;
 	background-color: #F9F7FA;
 	float:right;
 }
-	
-
