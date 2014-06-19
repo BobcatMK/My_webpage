@@ -18,24 +18,21 @@ class MainsController < ApplicationController
   
   def create
     @main = Main.new(main_params)
-    
+    @mains = Main.all
+   
     respond_to do |format|
       if @main.save
-        format.html { redirect_to @main }
+        format.html { redirect_to learn_webdeb_path  }
       else
-        format.html { render action: "learn_webdeb" }
+        format.html { render :learn_webdeb }
       end
     end
-  end
-  
-  def show
-    redirect_to :action => "learn_webdeb" # albo redirec_to learn_webdeb_path
   end
   
   private
     
     def main_params
-      params.require(:main).permit(:title, :body) # podsumowujac pozwala na zmiane tylko title i body w classie main czyli w modelu.
+      params.require(:main).permit(:title, :body) 
     end
   
 end

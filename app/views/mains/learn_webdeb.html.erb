@@ -29,37 +29,48 @@
 		</tr>
 	</thead>
 	<tbody>
-		<% @mains.each do |main| %>
+		
+<p>in here between</p>
+<%= p @main.inspect %>
+<p>those paragraphs</p>
+
+<% @mains.each do |a| %>
 			<tr>
-				<td><%= main.title %></td>
-				<td><%= main.body %></td>
+				<td><%= a.title %></td>
+				<td><%= a.body %></td>
 			</tr>
-		<% end %>
+<% end %>
+		
 	</tbody>
 </table>
 
-<%= form_for(@main) do |main| %>
+
+
+
+<%= form_for(@main) do |mai| %>
 
 	<div>
-		<%= main.label :title %>
-		<%= main.text_field :title %>
+		<%= mai.label :title %>
+		<%= mai.text_field :title %>
 	</div>
 	<div>
-		<%= main.label :body %>
-		<%= main.text_area :body %>
+		<%= mai.label :body %>
+		<%= mai.text_area :body %>
 	</div>
 	<div>
-		<%= main.submit %>
+		<%= mai.submit "Submit" %>
 	</div>
 	
 	<% if @main.errors.any? %>
-	<div>
-		<!-- ><h2><%= pluralize(@main.errors.count, "error") %> prohibited this post from being saved:</h2> -->
-		<% @main.errors.full_messages.each do |msg| %>
-			<p><%= msg %></p>
-		<% end %>
-	</div>
-<% end %>
+		<div>
+			<% @main.errors.full_messages.each do |msg| %>
+				<p><%= msg %></p>
+			<% end %>
+		</div>
+	<% end %>
+
 
 <% end %>
+
+
 
