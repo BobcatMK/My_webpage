@@ -24,6 +24,7 @@
 <table class="table">
 	<thead>
 		<tr>
+			<th>Photo:</th>
 			<th>Name:</th>
 			<th>Comment:</th>
 		</tr>
@@ -36,8 +37,10 @@
 
 <% @mains.each do |a| %>
 			<tr>
+				<td><%= image_tag(a.image_url, :alt => "Guest picture")%></td>
 				<td><%= a.title %></td>
 				<td><%= a.body %></td>
+				<td><%= a.image_url %></td>
 			</tr>
 <% end %>
 		

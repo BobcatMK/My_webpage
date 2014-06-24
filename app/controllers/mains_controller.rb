@@ -32,7 +32,7 @@ class MainsController < ApplicationController
   private
     
     def main_params
-      params.require(:main).permit(:title, :body) 
+      params.require(:main).permit(:title, :body, :image_url) 
     end
   
 end
