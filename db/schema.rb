@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140620131302) do
+ActiveRecord::Schema.define(version: 20140625180328) do
+
+  create_table "main_hierarchies", id: false, force: true do |t|
+    t.integer "ancestor_id",   null: false
+    t.integer "descendant_id", null: false
+    t.integer "generations",   null: false
+  end
+
+  add_index "main_hierarchies", ["ancestor_id", "descendant_id", "generations"], name: "comment_anc_desc_udx", unique: true
+  add_index "main_hierarchies", ["descendant_id"], name: "comment_desc_idx"
 
   create_table "mains", force: true do |t|
     t.string   "title"
@@ -19,6 +28,7 @@ ActiveRecord::Schema.define(version: 20140620131302) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_url"
+    t.integer  "parent_id"
   end
 
 end
