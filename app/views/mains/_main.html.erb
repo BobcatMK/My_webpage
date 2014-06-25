@@ -1,0 +1,15 @@
+<table class="table">
+	<tbody>
+		<tr>
+			<td rowspan="1" style="width: 100px;" ><%= image_tag(@alias.image_url, :alt => "Guest picture")%></td>
+			<td><%= @alias.title %><br/><%= l(@alias.created_at, format: '%d %B %Y, %H:%M:%S')%></td>
+		</tr>
+		<tr>
+			<td colspan="2" style="padding-left: 10px; padding-right: 10px; width: 500px;"><%= @alias.body %></td>
+		</tr>
+		<tr>
+			<td colspan="3"><a href="#">Reply</a></td>
+		</tr>
+	
+	</tbody>
+</table>

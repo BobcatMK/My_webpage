@@ -5,7 +5,7 @@ MyWebpage::Application.routes.draw do
 	match "books_courses", to: "mains#books_courses", via: "get"
 	match "contact", to: "mains#contact", via: "get"
 	root 'mains#learn_webdeb'
-	resources "mains"
+	resources "mains", only: [:create,:new]
 	
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

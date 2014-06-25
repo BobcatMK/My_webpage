@@ -21,59 +21,24 @@
 
 <div class="hr">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div>
 
-<table class="table">
-	<thead>
-		<tr>
-			<th>Photo:</th>
-			<th>Name:</th>
-			<th>Comment:</th>
-		</tr>
-	</thead>
-	<tbody>
-		
-<p>in here between</p>
 <%= p @main.inspect %>
-<p>those paragraphs</p>
+
+</br>
+</br>
+<%= link_to("Add new comment",new_main_path)%>
+</br>
+</br>
 
 <% @mains.each do |a| %>
-			<tr>
-				<td><%= image_tag(a.image_url, :alt => "Guest picture")%></td>
-				<td><%= a.title %></td>
-				<td><%= a.body %></td>
-				<td><%= a.image_url %></td>
-			</tr>
+	<% @alias = a %>
+	<%= render :partial => "main" %>
 <% end %>
-		
-	</tbody>
-</table>
+
+<br />
+<br />
 
 
 
-
-<%= form_for(@main) do |mai| %>
-
-	<div>
-		<%= mai.label :title %>
-		<%= mai.text_field :title %>
-	</div>
-	<div>
-		<%= mai.label :body %>
-		<%= mai.text_area :body %>
-	</div>
-	<div>
-		<%= mai.submit "Submit" %>
-	</div>
-	
-	<% if @main.errors.any? %>
-		<div>
-			<% @main.errors.full_messages.each do |msg| %>
-				<p><%= msg %></p>
-			<% end %>
-		</div>
-	<% end %>
-
-
-<% end %>
 
 
 

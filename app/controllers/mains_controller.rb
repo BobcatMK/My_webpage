@@ -4,6 +4,10 @@ class MainsController < ApplicationController
     @mains = Main.all
   end
 
+  def new
+    @main = Main.new
+  end
+
   def motivation
   end
 
@@ -24,9 +28,10 @@ class MainsController < ApplicationController
       if @main.save
         format.html { redirect_to learn_webdeb_path  }
       else
-        format.html { render :learn_webdeb }
+        format.html { render action: 'new' }
       end
     end
+    
   end
   
   private

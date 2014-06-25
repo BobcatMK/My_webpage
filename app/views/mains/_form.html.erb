@@ -1,0 +1,25 @@
+<%= form_for(@main) do |mai| %>
+
+	<div>
+		<%= mai.label :title %>
+		<%= mai.text_field :title %>
+	</div>
+	<div>
+		<%= mai.label :body %>
+		<%= mai.text_area :body %>
+	</div>
+	<div>
+		<%= mai.submit "Submit" %>
+	</div>
+
+<% end %>
+
+<%= p @main.inspect %>
+
+<% if @main.errors.any? %>
+		<div>
+			<% @main.errors.full_messages.each do |msg| %>
+				<p><%= msg %></p>
+			<% end %>
+		</div>
+<% end %>
