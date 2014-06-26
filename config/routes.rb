@@ -1,10 +1,12 @@
 MyWebpage::Application.routes.draw do
   root 'mains#learn_webdeb'
 	match "learn_webdeb", to:"mains#learn_webdeb", via: "get"
+	match "learn_webdeb", to:"mains#learn_webdeb", via: "post"
 	match "motivation", to:"mains#motivation", via: "get"
 	match "about", to: "mains#about", via: "get"
 	match "books_courses", to: "mains#books_courses", via: "get"
 	match "contact", to: "mains#contact", via: "get"
+	match "contact", to: "mains#contact", via: "post"
 	resources "mains", only: [:create]
 	get '/mains/new/(:parent_id)', to: "mains#new", as: :new_main
 	
