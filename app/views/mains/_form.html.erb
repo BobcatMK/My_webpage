@@ -1,5 +1,7 @@
 <%= form_for(@main) do |mai| %>
 
+	<%= mai.hidden_field :parent_id %>
+
 	<div>
 		<%= mai.label :title %>
 		<%= mai.text_field :title %>

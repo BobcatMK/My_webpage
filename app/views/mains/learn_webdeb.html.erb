@@ -21,19 +21,13 @@
 
 <div class="hr">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div>
 
-<%= p @main.inspect %>
-
 </br>
 </br>
 <%= link_to("Add new comment",new_main_path)%>
 </br>
 </br>
 
-<% @mains.each do |a| %>
-	<% @alias = a %>
-	<%= render :partial => "main" %>
-<% end %>
-
+<%= mains_tree_for @mains %> 
 <br />
 <br />
 

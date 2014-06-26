@@ -1,11 +1,10 @@
 class MainsController < ApplicationController
   def learn_webdeb
-    @main = Main.new
-    @mains = Main.all
+    @mains = Main.hash_tree
   end
 
   def new
-    @main = Main.new
+    @main = Main.new(parent_id: params[:parent_id])
   end
 
   def motivation
@@ -21,9 +20,13 @@ class MainsController < ApplicationController
   end
   
   def create
-    @main = Main.new(main_params)
-    @mains = Main.all
-   
+    if params[:main][:parent_id].to_i > 0
+      parent = Main.find_by_id(params[:main].delete(:parent_id))
+      @main = parent.children.build(main_params)
+    else
+      @main = Main.new(main_params)
+    end
+    
     respond_to do |format|
       if @main.save
         format.html { redirect_to learn_webdeb_path  }
