@@ -34,6 +34,19 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# Gems for contact page and mailing list
+gem 'compass-rails'
+gem 'figaro'
+gem 'gibbon'
+gem 'google_drive'
+# gem 'high_voltage'
+gem 'simple_form'
+group :development do
+  gem 'better_errors'
+  gem 'quiet_assets'
+  # gem 'rails_layout'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
