@@ -6,7 +6,11 @@ MyWebpage::Application.routes.draw do
 	match "about", to: "mains#about", via: "get"
 	match "books_courses", to: "mains#books_courses", via: "get"
 	match "contact", to: "mains#contact", via: "get"
-	match "contact", to: "mains#contact", via: "post"
+	
+	# Routes for contact page onlt
+	match "create_subscriber", to: "mains#create_subscriber", via: "post"
+	match "send_contact", to: "mains#send_contact", via: "post"
+	
 	resources "mains", only: [:create]
 	get '/mains/new/(:parent_id)', to: "mains#new", as: :new_main
 	

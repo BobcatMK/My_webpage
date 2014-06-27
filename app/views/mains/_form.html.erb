@@ -1,4 +1,4 @@
-<%= form_for(@main) do |mai| %>
+<%= form_for(@main,:url => url_for(:controller => "mains", :action => "create")) do |mai| %>
 
 	<%= mai.hidden_field :parent_id %>
 

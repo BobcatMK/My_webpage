@@ -1,2 +1,27 @@
 <%= stylesheet_link_tag "main_css/contact" %>
 <% content_for(:title, "MK Contact") %>
+
+<div>
+	<%= simple_form_for(@mail,url: url_for(controller: "mains", action: "create_subscriber")) do |g| %>
+		<%= g.error_notification %>
+		<%= g.input :email, label: false, :placeholder => "Your email address..." %>
+		</br>
+		<%= g.button :submit, "Sign up for the newsletter" %>
+	<% end %>
+</div>
+
+<br/>
+<br/>
+<br/>
+
+<div>
+	<%= simple_form_for(@contact,:url => url_for(controller: "mains", action: "send_contact")) do |f| %>
+		<%= f.error_notification %>
+		<%= f.input :name %>
+		<%= f.input :email %>
+		<%= f.input :content, as: :text %>
+		<%= f.button :submit, "Submit" %>
+	<% end %>
+</div>
+
+

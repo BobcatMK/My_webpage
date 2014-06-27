@@ -17,6 +17,8 @@ class MainsController < ApplicationController
   end
 
   def contact
+    @mail = Mailinglist.new
+    @contact = Contact.new
   end
   
   def create
@@ -37,10 +39,38 @@ class MainsController < ApplicationController
     
   end
   
+  def create_subscriber
+    @mortis = Mailinglist.new(main_params_mailing_list)
+    if @mortis.valid?
+      @mortis.subscribe
+      redirect_to contact_path
+    else
+      redirect_to contact_path
+    end
+  end
+  
+  def send_contact
+    @contact = Contact.new(main_params_contact)
+    if @contact.valid?
+      @contact.injection_to_spreadsheet
+      ContactMailer.contact_mail(@contact).deliver
+      redirect_to contact_path
+    else
+      redirect_to contact_path
+    end
+  end
+  
   private
     
     def main_params
       params.require(:main).permit(:title, :body, :image_url) 
     end
+    
+    def main_params_contact
+      params.require(:contact).permit(:name,:email,:content)
+    end
   
+    def main_params_mailing_list
+      params.require(:mailinglist).permit(:email)
+    end
 end
