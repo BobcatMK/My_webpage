@@ -6,6 +6,7 @@ MyWebpage::Application.routes.draw do
 	match "about", to: "mains#about", via: "get"
 	match "books_courses", to: "mains#books_courses", via: "get"
 	match "contact", to: "mains#contact", via: "get"
+	match "admin", to: "mains#admin", via: "get"
 	
 	# Routes for contact page onlt
 	match "create_subscriber", to: "mains#create_subscriber", via: "post"

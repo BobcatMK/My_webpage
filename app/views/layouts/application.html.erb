@@ -15,7 +15,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<div class="menu">
+<nav class="menu">
 	<div id="logo">MATTHEW KILAN<p id="font_opis">Programmer and entrepreneur</p></div>
 
 	<%= link_to(learn_webdeb_path) do %>
@@ -38,11 +38,14 @@
 		<div class="menu_text contact">Contact</div>
 	<% end %>
 
-</div>
-	<div id="column_left"></div>
-	<div id="column_right"></div>
-	<div id="column_horizontal"></div>
-	<%= yield %>
-	
+</nav>
+		<div class="whole_page_container clearfix">
+			<div id="column_left"></div>
+			<div class="main_page_container">
+				<%= yield %>
+			</div>
+			<div id="column_right"></div>
+			<div id="column_horizontal"></div>
+		</div>
 </body>
 </html>

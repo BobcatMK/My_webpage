@@ -1,0 +1,14 @@
+<%= stylesheet_link_tag "main_css/admin" %>
+<% content_for(:title, "Administrator") %>
+
+<% @all_posts.each do |post| %>
+	<div class="database_post">
+		<p><%= post.title %></p>
+		<p><%= post.body %></p>
+		<% if post.parent_id == nil %>
+			<%= p "parent_id: root" %>
+		<% else %>
+			<%= post.parent_id %>
+		<% end %>
+	</div>
+<% end %>

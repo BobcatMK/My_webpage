@@ -60,6 +60,10 @@ class MainsController < ApplicationController
     end
   end
   
+  def admin
+    @all_posts = Main.all
+  end
+  
   private
     
     def main_params

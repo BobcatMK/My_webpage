@@ -98,21 +98,42 @@
 }
 #column_left { //lewa kolumna
 	margin-left: -10px;
-	width: 16vw;
-	height: 300vh;
-	background-color: #F9F7FA;
+	width: 20%;
+  height: 1000px;
+	background-color: tomato;//#F9F7FA;
 	float:left;
 }
 #column_right { //prawa kolumna
 	margin-right: -8px;
-	width: 16vw;
-	height: 300vh;
-	background-color: #F9F7FA;
-	float:right;
+	width: 20%;
+	height: 1000px;
+	background-color: tomato;//#F9F7FA;
+	float:left;
 }
 .table {
-  margin-left: 16vw;
+  border: 1px solid black;
 }
 .replies {
   margin-left: 40px;
+}
+.main_page_container {
+  border: 1px solid black;
+  float:left;
+  width: 60%;
+}
+.whole_page_container {
+  border:3px blue dotted;
+  width: 100%;
+  float: left;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix {
+  display: inline-block;
 }
