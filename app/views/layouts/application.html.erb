@@ -16,27 +16,32 @@
 </head>
 <body>
 <nav class="menu">
+	<div id="logo-margin-left"></div>
 	<div id="logo">MATTHEW KILAN<p id="font_opis">Programmer and entrepreneur</p></div>
-
-	<%= link_to(learn_webdeb_path) do %>
-		<div class="menu_text web">Web development</div>
-	<% end %>
-
-	<%= link_to(motivation_path) do %>
-		<div class="menu_text motivation">Motivation</div>
-	<% end %>
-
-	<%= link_to(about_path) do %>
-		<div class="menu_text projects">Projects<br />& About</div>
-	<% end %>
-
-	<%= link_to(books_courses_path) do %>
-		<div class="menu_text books">Books & Courses</div>
-	<% end %>
-
-	<%= link_to(contact_path) do %>
-		<div class="menu_text contact">Contact</div>
-	<% end %>
+	<div id="centerer">
+		<div id="whole_transitioning_menu">
+			<div class="distance-maker"></div>
+			<%= link_to(learn_webdeb_path) do %>
+				<div class="menu_text web">Web development</div>
+			<% end %>
+			<div class="margin-maker"></div>
+			<%= link_to(motivation_path) do %>
+				<div class="menu_text motivation">Motivation</div>
+			<% end %>
+			<div class="margin-maker"></div>
+			<%= link_to(about_path) do %>
+				<div class="menu_text projects">Projects<br />& About</div>
+			<% end %>
+			<div class="margin-maker"></div>
+			<%= link_to(books_courses_path) do %>
+				<div class="menu_text books">Books & Courses</div>
+			<% end %>
+			<div class="margin-maker"></div>
+			<%= link_to(contact_path) do %>
+				<div class="menu_text contact">Contact</div>
+			<% end %>
+		</div>
+	</div>
 </nav>
 
 	<div id="column_horizontal"></div>

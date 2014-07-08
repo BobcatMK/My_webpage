@@ -6,51 +6,53 @@ body, html {
   //position:relative;
   //min-height: 100%;
   //min-width: 100%;
-  background: none repeat scroll 0 0;
+  //background: none repeat scroll 0 0;
   margin-right: 0;
   margin-left: 0;
   margin-bottom: 0;
   margin-top:0;
   padding: 0;
+  height: 100%;
+  width: 100%;
 }
 html {
-  // border: 1px green solid;
+  //border: 1px green solid;
 }
 body {
-  // border: 1px blue solid;
+  //border: 1px blue solid;
 }
 
+//////////////////////////////////////////////////////////// WHOLE MENU OF THE WEBSITE
+
 .menu { // czarne menu
-  position: absolute;
 	background-color: black;
 	width: 100%;
-	min-height: 105px;
+	height: 16.5%;
 	margin-left: 0;
 	margin-top: 0;
-	position: initial;
+	display: table;
+	//border: 2px solid blue;
 }
 #logo { // Moje logo Matthew Kilan
 	font-family: 'Lato';
 	letter-spacing: 2px;
-	position: relative;
-	left: 20px;
-	top: 35px;
+	//position: relative;
+	//left: 20px;
+	//top: 35px;
 	color: #fff;
-	float:left;
+	//float:left;
 	font-size: 150%;
 	line-height: 0.3;
 	font-weight: 900;
+	//border: 2px solid red;
+	display: table-cell;
+	min-width: 23%;
+	vertical-align: middle;
 }
-/*#short_text { // Krotki opis przedstawiajacy moja osobe, ten obok loga
-	font-family: 'Lobster';
-	font-size: 110%;
-	letter-spacing: 1px;
-	color: #fff;
-	position: relative;
-	left: 60px;
-	top: 15px;
-	float:left;
-}*/
+#logo-margin-left {
+  display:table-cell;
+  min-width: 2%;
+}
 
 #font_opis { // krotki tekst opisujacy mnie, ten pod logo
 	font-family: 'Ubuntu';
@@ -58,20 +60,44 @@ body {
 	margin-left: 10px;
 	letter-spacing: .5px;
 	font-weight: 700;
+	//border: 2px solid green;
+}
+#whole_transitioning_menu {
+  display:flex;
+  //border: 1px yellow solid;
+}
+#centerer {
+  display:table-cell;
+  vertical-align: middle;
+  //border: 2px solid purple;
 }
 
 .menu_text { // cale menu tekstowe strony
 	color: #fff;
-	position: relative;
-	top: 30px;
-	left: 90px;
-	float:left;
-	margin-left: 40px;
+	text-decoration: none;
+	//position: relative;
+	//top: 30px;
+	//left: 90px;
+	//float:left;
+	//margin-left: 40px;
+	margin-right: 10px;
 	font-weight: initial;
 	text-align: center;
 	font-family: 'Ubuntu';
   letter-spacing: -0.2px;
   font-size: 1em;
+  //border:2px solid green;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.distance-maker {
+  display:table-cell;
+  width: 30px;
+}
+.margin-maker {
+  display: table-cell;
+  width: 40px;
 }
 .web,
 .motivation,
@@ -80,7 +106,7 @@ body {
 .contact { // parametry menu zwiazane z przejsciem
 	height: 7vh;
 	width: 13vw;
-	line-height: 44px;
+	// line-height: 44px;
 	transition: background-color, .5s;
 	border-radius: 5% 5% 5% 5% / 15% 15% 15% 15%;
 }
@@ -90,16 +116,17 @@ body {
 	width: 9vw;
 }
 .projects { // parametry menu
-	line-height: 22px;
+	//line-height: 22px;
 }
 
-.menu_text a:link,
-.menu_text a:visited,
-.menu_text a:hover,
-.menu_text a:active { // formatowanie linkow menu tekstowego
-	text-decoration: none;
-	color: white;
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: white;
 }
+
 .web:hover,
 .motivation:hover,
 .projects:hover,
@@ -109,11 +136,14 @@ body {
 	background-color: #166ACE;
 	transition: background-color, .5s;
 }
+
+//////////////////////////////////////////////////////// THIS IS WHERE MENU ENDS
+
+/////////////////////////////////////////////////////// HERE MAIN CONTENT OF THE PAGE BEGINS
 #column_horizontal {
   position:relative;
 	background-color: #F9F7FA;
 	height: 5%;
-	z-index: 100000;
 }
 #column_left { //lewa kolumna
 	margin-left: 0px;
@@ -144,5 +174,8 @@ body {
   width: 100%;
   display: table;
   margin-left: 0;
-  min-height: 100vw;
+  height: 100%;
 }
+
+
+/////////////////////////////////////////////////////// HERE MAIN CONTENT OF THE PAGE ENDS
