@@ -2,12 +2,31 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body, html {
+  //position:relative;
+  //min-height: 100%;
+  //min-width: 100%;
+  background: none repeat scroll 0 0;
+  margin-right: 0;
+  margin-left: 0;
+  margin-bottom: 0;
+  margin-top:0;
+  padding: 0;
+}
+html {
+  // border: 1px green solid;
+}
+body {
+  // border: 1px blue solid;
+}
+
 .menu { // czarne menu
+  position: absolute;
 	background-color: black;
-	width: 99vw;
-	height: 16vh;
-	margin-left: -8px;
-	margin-top: -10px;
+	width: 100%;
+	min-height: 105px;
+	margin-left: 0;
+	margin-top: 0;
 	position: initial;
 }
 #logo { // Moje logo Matthew Kilan
@@ -59,13 +78,11 @@
 .projects,
 .books,
 .contact { // parametry menu zwiazane z przejsciem
-	
 	height: 7vh;
 	width: 13vw;
 	line-height: 44px;
 	transition: background-color, .5s;
 	border-radius: 5% 5% 5% 5% / 15% 15% 15% 15%;
-	
 }
 .motivation,
 .projects,
@@ -93,22 +110,22 @@
 	transition: background-color, .5s;
 }
 #column_horizontal {
+  position:relative;
 	background-color: #F9F7FA;
-	height: 5vh;
+	height: 5%;
+	z-index: 100000;
 }
 #column_left { //lewa kolumna
-	margin-left: -10px;
+	margin-left: 0px;
 	width: 20%;
-  height: 1000px;
 	background-color: tomato;//#F9F7FA;
-	float:left;
+	display: table-cell;
 }
 #column_right { //prawa kolumna
-	margin-right: -8px;
+	margin-right: 0px;
 	width: 20%;
-	height: 1000px;
 	background-color: tomato;//#F9F7FA;
-	float:left;
+	display: table-cell;
 }
 .table {
   border: 1px solid black;
@@ -118,22 +135,14 @@
 }
 .main_page_container {
   border: 1px solid black;
-  float:left;
+  display: table-cell;
   width: 60%;
+  vertical-align: top;
 }
 .whole_page_container {
-  border:3px blue dotted;
+  // border:0px blue dotted;
   width: 100%;
-  float: left;
-}
-
-.clearfix:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-}
-.clearfix {
-  display: inline-block;
+  display: table;
+  margin-left: 0;
+  min-height: 100vw;
 }

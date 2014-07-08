@@ -37,15 +37,16 @@
 	<%= link_to(contact_path) do %>
 		<div class="menu_text contact">Contact</div>
 	<% end %>
-
 </nav>
-		<div class="whole_page_container clearfix">
-			<div id="column_left"></div>
-			<div class="main_page_container">
-				<%= yield %>
-			</div>
-			<div id="column_right"></div>
-			<div id="column_horizontal"></div>
+
+	<div id="column_horizontal"></div>
+	<div class="whole_page_container">
+		<div id="column_left"></div>
+		<div class="main_page_container">
+			<%= yield %>
 		</div>
+		<div id="column_right"></div>
+	</div>
+	
 </body>
 </html>
