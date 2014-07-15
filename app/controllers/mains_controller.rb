@@ -3,6 +3,7 @@ class MainsController < ApplicationController
   
   def learn_webdeb
     @mains = Main.hash_tree
+    @post_all = Post.all
   end
 
   def new
@@ -63,6 +64,7 @@ class MainsController < ApplicationController
   end
   
   def admin
+    @post_new = Post.new
     @all_comments = Main.all
   end
   
@@ -70,11 +72,6 @@ class MainsController < ApplicationController
     @komentarz = Main.find(params[:id])
     @komentarz.destroy
     redirect_to admin_path
-    #if @komentarz.destroy
-    #  redirect_to admin_path
-    #else
-    #  redirect_to admin_path
-    ##end
   end
   
   def edit
@@ -86,11 +83,6 @@ class MainsController < ApplicationController
     @comment_edit.update(params[:main].permit(:title,:body))
     
     redirect_to admin_path
-    ##if @comment_edit.update(params[:main].permit(:title,:text))
-    ##  redirect_to admin_path
-    ##else
-    # # render 'edit'
-    
   end
   
   private

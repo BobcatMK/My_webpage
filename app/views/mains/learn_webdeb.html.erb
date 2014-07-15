@@ -1,25 +1,17 @@
 <%= stylesheet_link_tag "main_css/webdevelopment" %>
 <% content_for(:title, "MK Web development") %>
 
-<div class="post">
-	<div class="post_title" style="font-family:'Lato'; font-weight:900; font-size: 3em; line-height: 0.6;">MY FIRST POST TITLE TEXT <br /><span style="font-weight:100; font-size:0.5em;">Release date: 20.06.2014</span></div>
-	<br />
-	<div class="short_desc" style="font-family:'Lato'; font-weight:300; font-size: 1.4em;"><p>This is my text short description, it's my first short description so be full of empathy, because apparently I need a lot of it my simple, one cocked friend. Here I'm going to tell you 10 reasons to follow your dreams:
+<% @post_all.each do |asdf| %>
+	<div class="post">
+		<div class="post_title" style="font-family:'Lato'; font-weight:900; font-size: 3em; line-height: 0.6;"><%= asdf.title.upcase %><br /><span style="font-weight:100; font-size:0.5em;">Release date: <%= asdf.date %></span></div>
 		<br />
-		<br />1)It makes you become yourself
-		<br />2)It makes you feel alive
-		<br />3)It makes you happy
-		<br />4)It makes you become who you always wanted to be
-		<br />5)It makes you grateful
-		<br />6)It makes you better person
-		<br />7)It makes you more empathic
-		<br />8)It makes you feel lighter on your soul
-		<br />9)It makes you richer
-		<br />10)It makes you have your dreams as reality.</p>
+		<div class="short_desc" style="font-family:'Lato'; font-weight:300; font-size: 1.4em;">
+			<%= asdf.short %>
+		</div>
 	</div>
-</div>
-
-<div class="hr">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div>
+	<div class="hr">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div>
+	<br />
+<% end %>
 
 </br>
 </br>

@@ -1,6 +1,33 @@
 <%= stylesheet_link_tag "main_css/admin" %>
 <% content_for(:title, "Administrator") %>
 <br>
+
+<%= form_for(@post_new, :url => url_for(:controller => "posts", :action => "create")) do |newpost| %>
+	<div>
+		<%= newpost.label :title %>
+		<br />
+		<%= newpost.text_field :title%>
+	</div>
+	<div>
+		<%= newpost.label :short %>
+		<br />
+		<%= newpost.text_area :short %>
+	</div>
+	<div>
+		<%= newpost.label :body %>
+		<br />
+		<%= newpost.text_area :body %>
+	</div>
+	<div>
+		<%= newpost.label :date %>
+		<br />
+		<%= newpost.text_field :date %>
+	</div>
+	<div>
+		<%= newpost.submit "Create new post" %>
+	</div>
+<% end %>
+<!--
 <% @all_comments.each do |posts| %>
 	<table class="database_post">
 		<tr>
@@ -29,3 +56,4 @@
 	</table>
 	
 <% end %>
+-->
