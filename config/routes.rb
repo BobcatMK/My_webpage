@@ -22,6 +22,8 @@ MyWebpage::Application.routes.draw do
   match "create_post", to: "posts#create_post", via: "get"
   match "create_motivation", to: "posts#create_motivation", via: "get"
   match "save_motivation", to: "posts#save_motivation", via: "post"
+  get "/web development/(:id)", to: "posts#learn_showpost", as: :learn_showpost
+  get "motivation/(:id)", to: "posts#motivation_showpost", as: :motivation_showpost
 	# END OF POSTS CONTROLLER
 
 	

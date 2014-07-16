@@ -27,6 +27,15 @@ class PostsController < ApplicationController
     @post_new = PostMotivation.new
   end
   
+  def learn_showpost
+    #@post_to_render = Post.where(id: params[:id]) - zostawiam tego dla przestrogi, nie moglem w learn_showpost drukowac na ekran poszczegolnych parametrow tego posta pomimo, ze zawieral wszystkie parametry w srodku.
+    @post_to_render2 = Post.find(params[:id])
+  end
+  
+  def motivation_showpost
+    @post_to_render3 = PostMotivation.find(params[:id])
+  end
+  
   private
   
     def post_param_create_post
@@ -36,4 +45,5 @@ class PostsController < ApplicationController
     def post_motivation_param
       params.require(:post_motivation).permit(:title,:date,:short,:body)
     end
+
 end
