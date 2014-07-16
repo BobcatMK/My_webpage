@@ -1,14 +1,31 @@
 <%= stylesheet_link_tag "main_css/admin" %>
 <% content_for(:title, "Administrator") %>
-
-<% @all_posts.each do |post| %>
-	<div class="database_post">
-		<p><%= post.title %></p>
-		<p><%= post.body %></p>
-		<% if post.parent_id == nil %>
-			<%= p "parent_id: root" %>
-		<% else %>
-			<%= post.parent_id %>
-		<% end %>
-	</div>
+<br>
+<% @all_comments.each do |posts| %>
+	<table class="database_post">
+		<tr>
+			<td class="id"><%= p "id: #{posts.id}" %></td>
+			<td class="name"><%= posts.title %></td>
+			<td class="parent">
+				<% if posts.parent_id == nil %>
+					<%= p "parent_id: root" %>
+				<% else %>
+					<%= p "parent_id: #{posts.parent_id}" %>
+				<% end %>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3" class="body">
+				<%= p "Content:" %>
+				<%= posts.body %>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3"><%= link_to "Delete", main_path(posts),method: :delete, data: { confirm: "Are you sure?" }  %></td>
+		</tr>
+		<tr>
+			<td colspan="3"><%= link_to "Edit", edit_main_path(posts) %></td>
+		</tr>
+	</table>
+	
 <% end %>

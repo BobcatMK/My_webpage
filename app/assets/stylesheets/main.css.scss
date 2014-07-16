@@ -124,7 +124,7 @@ a:visited,
 a:hover,
 a:active {
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
 .web:hover,
@@ -141,30 +141,29 @@ a:active {
 
 /////////////////////////////////////////////////////// HERE MAIN CONTENT OF THE PAGE BEGINS
 #column_horizontal {
-  position:relative;
 	background-color: #F9F7FA;
 	height: 5%;
 }
 #column_left { //lewa kolumna
 	margin-left: 0px;
 	width: 20%;
-	background-color: tomato;//#F9F7FA;
+	background-color: #F9F7FA;
 	display: table-cell;
 }
 #column_right { //prawa kolumna
 	margin-right: 0px;
 	width: 20%;
-	background-color: tomato;//#F9F7FA;
+	background-color: #F9F7FA;
 	display: table-cell;
 }
 .table {
-  border: 1px solid black;
+  //border: 1px solid black;
 }
 .replies {
   margin-left: 40px;
 }
 .main_page_container {
-  border: 1px solid black;
+  //border: 1px solid black;
   display: table-cell;
   width: 60%;
   vertical-align: top;

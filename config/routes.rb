@@ -7,12 +7,14 @@ MyWebpage::Application.routes.draw do
 	match "books_courses", to: "mains#books_courses", via: "get"
 	match "contact", to: "mains#contact", via: "get"
 	match "admin", to: "mains#admin", via: "get"
+	#match "edit", to: "mains#edit", via: "get"
 	
-	# Routes for contact page onlt
+	# Routes for contact page only
 	match "create_subscriber", to: "mains#create_subscriber", via: "post"
 	match "send_contact", to: "mains#send_contact", via: "post"
 	
-	resources "mains", only: [:create]
+	resources "mains", only: [:create,:destroy,:update,:edit]
+	
 	get '/mains/new/(:parent_id)', to: "mains#new", as: :new_main
 	
   # The priority is based upon order of creation: first created -> highest priority.

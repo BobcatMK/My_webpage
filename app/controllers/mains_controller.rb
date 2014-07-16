@@ -1,4 +1,6 @@
 class MainsController < ApplicationController
+  before_action :authenticate, only: [:admin]
+  
   def learn_webdeb
     @mains = Main.hash_tree
   end
@@ -61,7 +63,34 @@ class MainsController < ApplicationController
   end
   
   def admin
-    @all_posts = Main.all
+    @all_comments = Main.all
+  end
+  
+  def destroy
+    @komentarz = Main.find(params[:id])
+    @komentarz.destroy
+    redirect_to admin_path
+    #if @komentarz.destroy
+    #  redirect_to admin_path
+    #else
+    #  redirect_to admin_path
+    ##end
+  end
+  
+  def edit
+    @comment_edit = Main.find(params[:id])
+  end
+  
+  def update
+    @comment_edit = Main.find(params[:id])
+    @comment_edit.update(params[:main].permit(:title,:body))
+    
+    redirect_to admin_path
+    ##if @comment_edit.update(params[:main].permit(:title,:text))
+    ##  redirect_to admin_path
+    ##else
+    # # render 'edit'
+    
   end
   
   private
@@ -77,4 +106,11 @@ class MainsController < ApplicationController
     def main_params_mailing_list
       params.require(:mailinglist).permit(:email)
     end
+    
+    def authenticate
+      authenticate_or_request_with_http_basic do |name, password|
+        name = ENV["ADMIN_LOGIN"] && password == ENV["ADMIN_PASSWORD"]
+      end
+    end
+    
 end

@@ -1,6 +1,43 @@
 .database_post {
-  border: 1px black solid;
-  overflow: auto;
-  margin-left: 20px; 
+  border: 1px solid black;
+  width: 50%;
+  margin-bottom: 5px;
+  border-collapse: collapse;
+  justify: right;
+  margin-left: 10%;
+}
+.id {
+  //display: table-cell;
+  border: 1px solid black;
+  padding: 0;
+  margin: auto;
+  width: 15%;
+}
+.name {
+  //display: table-cell;
+  border: 1px solid black;
+}
+.parent {
+  //display: table-cell;
+  border: 1px solid black;
+  width: 35%;
+}
+.body {
+  //display: table-cell;
+  border: 1px solid black;
+}
+td {
+  border: 1px solid black;
+  text-align: left;
+  padding: 0;
 }
 
+a:link,
+a:visited,
+a:active {
+  color: blue;
+}
+
+a:hover {
+  color: tomato;
+}
