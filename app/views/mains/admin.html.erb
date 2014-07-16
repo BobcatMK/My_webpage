@@ -1,32 +1,102 @@
 <%= stylesheet_link_tag "main_css/admin" %>
 <% content_for(:title, "Administrator") %>
 <br>
-
-<%= form_for(@post_new, :url => url_for(:controller => "posts", :action => "create")) do |newpost| %>
-	<div>
-		<%= newpost.label :title %>
-		<br />
-		<%= newpost.text_field :title%>
-	</div>
-	<div>
-		<%= newpost.label :short %>
-		<br />
-		<%= newpost.text_area :short %>
-	</div>
-	<div>
-		<%= newpost.label :body %>
-		<br />
-		<%= newpost.text_area :body %>
-	</div>
-	<div>
-		<%= newpost.label :date %>
-		<br />
-		<%= newpost.text_field :date %>
-	</div>
-	<div>
-		<%= newpost.submit "Create new post" %>
-	</div>
+<p>Web development, list of all posts</p>
+<%= link_to "Create new post", create_post_path %>
+<br />
+<br />
+<% @all_posts_webdevelopment.each do |post| %>
+	<table class="database_post">
+		<tr>
+			<td class="id"><%= p "id: #{post.id}" %></td>
+			<td class="name"><%= post.title %></td>
+		</tr>
+		<tr>
+			<td colspan="3" class="body">
+				<%= p "Short_description:" %>
+				<%= post.short %>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3" class="body">
+				<%= p "Content:" %>
+				<%= post.body %>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3">
+				<%= p "Date:" %>
+				<%= post.date %>
+			</td>
+		</tr>
+	</table>
+	
 <% end %>
+
+<p>Motivation, list of all posts</p>
+
+<%= link_to "Create new post", create_motivation_path %>
+<br />
+<br />
+
+<% @all_posts_motivation.each do |post| %>
+	<table class="database_post">
+		<tr>
+			<td class="id"><%= p "id: #{post.id}" %></td>
+			<td class="name"><%= post.title %></td>
+		</tr>
+		<tr>
+			<td colspan="3" class="body">
+				<%= p "Short_description:" %>
+				<%= post.short %>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3" class="body">
+				<%= p "Content:" %>
+				<%= post.body %>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3">
+				<%= p "Date:" %>
+				<%= post.date %>
+			</td>
+		</tr>
+	</table>
+	
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!--
 <% @all_comments.each do |posts| %>
 	<table class="database_post">

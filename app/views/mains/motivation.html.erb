@@ -1,2 +1,14 @@
 <%= stylesheet_link_tag "main_css/motivation" %>
 <% content_for(:title, "MK Motivation") %>
+
+<% @post_all.each do |asdf| %>
+	<div class="post">
+		<div class="post_title" style="font-family:'Lato'; font-weight:900; font-size: 3em; line-height: 0.6;"><%= asdf.title.upcase %><br /><span style="font-weight:100; font-size:0.5em;">Release date: <%= asdf.date %></span></div>
+		<br />
+		<div class="short_desc" style="font-family:'Lato'; font-weight:300; font-size: 1.4em;">
+			<%= asdf.short %>
+		</div>
+	</div>
+	<div class="hr">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div>
+	<br />
+<% end %>

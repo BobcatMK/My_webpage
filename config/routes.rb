@@ -8,18 +8,20 @@ MyWebpage::Application.routes.draw do
 	match "books_courses", to: "mains#books_courses", via: "get"
 	match "contact", to: "mains#contact", via: "get"
 	match "admin", to: "mains#admin", via: "get"
-	
 	resources "mains", only: [:create,:destroy,:update,:edit]
-  
   get '/mains/new/(:parent_id)', to: "mains#new", as: :new_main
-
 	# Routes for contact page only
 	match "create_subscriber", to: "mains#create_subscriber", via: "post"
 	match "send_contact", to: "mains#send_contact", via: "post"
 	# END OF MAINS CONTROLLER
 	
+	
+	
 	# POSTS CONTROLLER
   resources :posts
+  match "create_post", to: "posts#create_post", via: "get"
+  match "create_motivation", to: "posts#create_motivation", via: "get"
+  match "save_motivation", to: "posts#save_motivation", via: "post"
 	# END OF POSTS CONTROLLER
 
 	

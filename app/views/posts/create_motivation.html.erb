@@ -1,0 +1,29 @@
+<% content_for(:title, "Post motivation") %>
+
+<%= form_for(@post_new, :url => url_for(:controller => "posts", :action => "save_motivation")) do |newpost| %>
+	<div>
+		<%= newpost.label :title %>
+		<br />
+		<%= newpost.text_field :title%>
+	</div>
+	<div>
+		<%= newpost.label :short %>
+		<br />
+		<%= newpost.text_area :short %>
+	</div>
+	<div>
+		<%= newpost.label :body %>
+		<br />
+		<%= newpost.text_area :body %>
+	</div>
+	<div>
+		<%= newpost.label :date %>
+		<br />
+		<%= newpost.text_field :date %>
+	</div>
+	<div>
+		<%= newpost.submit "Create new post" %>
+	</div>
+<% end %>
+<br>
+<%= link_to "Back", admin_path %>

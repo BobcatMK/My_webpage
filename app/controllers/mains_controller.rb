@@ -11,6 +11,7 @@ class MainsController < ApplicationController
   end
 
   def motivation
+    @post_all = PostMotivation.all
   end
 
   def about
@@ -64,8 +65,9 @@ class MainsController < ApplicationController
   end
   
   def admin
-    @post_new = Post.new
     @all_comments = Main.all
+    @all_posts_webdevelopment = Post.all
+    @all_posts_motivation = PostMotivation.all
   end
   
   def destroy
