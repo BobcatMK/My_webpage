@@ -1,5 +1,8 @@
 class Main < ActiveRecord::Base
   #after_initialize :init
+  belongs_to :post
+  belongs_to :post_motivation
+  
   before_save :default_values
   
   validates :title, :presence => { :message => "can't be blank" }
