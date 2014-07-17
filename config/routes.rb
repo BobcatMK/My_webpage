@@ -9,7 +9,7 @@ MyWebpage::Application.routes.draw do
 	match "contact", to: "mains#contact", via: "get"
 	match "admin", to: "mains#admin", via: "get"
 	resources "mains", only: [:create,:destroy,:update,:edit]
-  get '/mains/new/(:parent_id)', to: "mains#new", as: :new_main
+  get '/mains/new/(:parent_id)/(:post_id)/(:post_motivation_id)', to: "mains#new", as: :new_main
 	# Routes for contact page only
 	match "create_subscriber", to: "mains#create_subscriber", via: "post"
 	match "send_contact", to: "mains#send_contact", via: "post"

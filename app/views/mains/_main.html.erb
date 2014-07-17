@@ -14,7 +14,7 @@
 					<% if main.leaf? %>
 						<small>There are no replies yet - be the first to reply!</small>
 					<% end %>
-					<p><%= link_to "Reply", new_main_path(main.id) %></p>
+					<p><%= link_to "Reply", new_main_path(main.id,main.post_id,main.post_motivation_id) %></p>
 				<% end %>
 			</td>
 		</tr>

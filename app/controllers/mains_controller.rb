@@ -7,7 +7,7 @@ class MainsController < ApplicationController
   end
 
   def new
-    @main = Main.new(parent_id: params[:parent_id])
+    @main = Main.new(parent_id: params[:parent_id],post_id: params[:post_id],post_motivation_id: params[:post_motivation_id])
   end
 
   def motivation
@@ -33,11 +33,17 @@ class MainsController < ApplicationController
       @main = Main.new(main_params)
     end
     
-    respond_to do |format|
+    if @main.post_motivation_id > 0
       if @main.save
-        format.html { redirect_to learn_webdeb_path  }
+        redirect_to motivation_path
       else
-        format.html { render action: 'new' }
+        redirect_to motivation_path
+      end
+    elsif @main.post_id > 0
+      if @main.save
+        redirect_to learn_webdeb_path
+      else
+        redirect_to learn_webdeb_path
       end
     end
     
@@ -90,7 +96,7 @@ class MainsController < ApplicationController
   private
     
     def main_params
-      params.require(:main).permit(:title, :body, :image_url) 
+      params.require(:main).permit(:title, :body, :image_url, :post_id, :post_motivation_id) 
     end
     
     def main_params_contact

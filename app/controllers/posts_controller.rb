@@ -30,10 +30,12 @@ class PostsController < ApplicationController
   def learn_showpost
     #@post_to_render = Post.where(id: params[:id]) - zostawiam tego dla przestrogi, nie moglem w learn_showpost drukowac na ekran poszczegolnych parametrow tego posta pomimo, ze zawieral wszystkie parametry w srodku.
     @post_to_render2 = Post.find(params[:id])
+    @mains = Main.where(post_id: params[:id]).hash_tree
   end
   
   def motivation_showpost
     @post_to_render3 = PostMotivation.find(params[:id])
+    @mains = Main.where(post_motivation_id: params[:id]).hash_tree
   end
   
   private

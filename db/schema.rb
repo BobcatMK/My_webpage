@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140716083422) do
+ActiveRecord::Schema.define(version: 20140717071925) do
 
   create_table "main_hierarchies", id: false, force: true do |t|
     t.integer "ancestor_id",   null: false
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 20140716083422) do
     t.datetime "updated_at"
     t.string   "image_url"
     t.integer  "parent_id"
+    t.integer  "post_id"
+    t.integer  "post_motivation_id"
   end
 
   create_table "post_motivations", force: true do |t|

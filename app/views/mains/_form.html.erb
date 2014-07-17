@@ -1,6 +1,10 @@
 <%= form_for(@main,:url => url_for(:controller => "mains", :action => "create")) do |mai| %>
 
 	<%= mai.hidden_field :parent_id %>
+	
+	<%= mai.hidden_field :post_id %>
+	
+	<%= mai.hidden_field :post_motivation_id %>
 
 	<div>
 		<%= mai.label :title %>
