@@ -1,0 +1,17 @@
+<% content_for(:title, "Edit certain post")%>
+
+<%= @comment_to_be_edited.inspect %>
+
+<%= form_for(@comment_to_be_edited, :url => update_edit_post_comment_path(@comment_to_be_edited.id)) do |comment| %>
+	<br />
+	<div><%= comment.label :title %></div>
+	<div><%= comment.text_field :title %></div>
+	<br />
+	<div><%= comment.label :body %></div>
+	<div><%= comment.text_area :body %></div>
+	<br />
+	<div><%= comment.submit "Submit " %></div>
+<% end %>
+
+
+

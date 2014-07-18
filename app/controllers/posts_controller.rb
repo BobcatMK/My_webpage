@@ -42,8 +42,10 @@ class PostsController < ApplicationController
     @alibaba = params[:ahojmarynarzu]
     if @alibaba == "true"
       @received_post = Post.find(params[:id])
+      @all_post_comments = Main.where(post_id: params[:id]).all
     elsif @alibaba == "false"
       @received_post = PostMotivation.find(params[:id])
+      @all_post_comments = Main.where(post_motivation_id: params[:id]).all
     end
   end
   
@@ -102,6 +104,22 @@ class PostsController < ApplicationController
     end
   end
   
+  def delete_post_comment
+    @comment_to_be_deleted = Main.find(params[:comment_id])
+    @comment_to_be_deleted.destroy
+    redirect_to admin_path
+  end
+  
+  def edit_post_comment
+    @comment_to_be_edited = Main.find(params[:comment_id])
+  end
+  
+  def update_edit_post_comment
+    @comment_to_be_updated = Main.find(params[:comment_id])
+    @comment_to_be_updated.update(update_post_comment_params)
+    redirect_to admin_path
+  end
+  
   private
   
     def post_param_create_post
@@ -120,5 +138,11 @@ class PostsController < ApplicationController
       def edit_post_moti_params
         params.require(:post_motivation).permit(:title,:date,:short,:body)
       end
-    #END OF UNIQUE PARAMS
+    #END OF UNIQUE PARAMS FOR EDITING POSTS
+    
+    #PARAMS FOR EDITING POST'S COMMENT
+      def update_post_comment_params
+        params.require(:main).permit(:title,:body)
+      end
+    #END OF PARAMS FOR EDITING POST'S COMMENT
 end

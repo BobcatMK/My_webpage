@@ -41,3 +41,42 @@
 		</td>
 	</tr>
 </table>
+
+<br />
+<br />
+
+<% @all_post_comments.each do |comment| %>
+	<table>
+		<tr>
+			<td><%= comment.id %></td>
+			<td><%= comment.title %></td>
+			<td>
+				<% if comment.parent_id == nil %>
+					<%= p "parent_id: root" %>
+				<% else %>
+					<%= p "parent_id: #{comment.parent_id}" %>
+				<% end %>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3">
+				<%= p "Content:" %>
+				<%= comment.body %>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3"><%= link_to "Delete", delete_post_comment_path(comment.id), data: { confirm: "Are you sure than you want to delete this item that is about to be deleted and never to be seen anymore in your or others databases?"}  %></td>
+		</tr>
+		<tr>
+			<td colspan="3"><%= link_to "Edit", edit_post_comment_path(comment.id) %></td>
+		</tr>
+	</table>
+	<br />
+<% end %>
+
+
+
+
+
+
+

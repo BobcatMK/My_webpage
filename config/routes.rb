@@ -30,6 +30,9 @@ MyWebpage::Application.routes.draw do
   get "/admin/delete_post/(:id)/(:alibaba)", to: "posts#delete_post", as: :delete_post
   get "/admin/edit_poscik/(:id)/(:alibaba)", to: "posts#edit_poscik", as: :edit_poscik
   patch "/admin/edit(:id)/(:alibaba)", to: "posts#apdejt", as: :apdejt
+  get "/admin/delete_post_comment/(:comment_id)", to: "posts#delete_post_comment", as: :delete_post_comment
+  get "/admin/edit_post_comment/(:comment_id)", to: "posts#edit_post_comment", as: :edit_post_comment
+  patch "/admin/update_edit_post_comment/(:comment_id)", to: "posts#update_edit_post_comment", as: :update_edit_post_comment
 	# END OF POSTS CONTROLLER
 
 	
