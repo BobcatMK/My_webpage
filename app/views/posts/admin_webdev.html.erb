@@ -1,0 +1,43 @@
+<%= stylesheet_link_tag "main_css/admin_webdev" %>
+<% content_for(:title, "Admin - webdev")%>
+
+<%= @received_post.inspect %>
+</br>
+<%= @alibaba.inspect %>
+<br />
+
+<table class="database_post">
+	<tr>
+		<td class="id">
+			<%= @received_post.id %>
+		</td>
+		<td class="name">
+			<%= @received_post.title %>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<%= @received_post.short %>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="body">
+			<%= @received_post.body %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= @received_post.date %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= link_to "Edit", edit_poscik_path(@received_post.id,@alibaba) %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= link_to "Delete", delete_post_path(@received_post.id,@alibaba), data: { confirm: "Are you sure? This post and all it's corrensponding comments will be deleted" } %>
+		</td>
+	</tr>
+</table>

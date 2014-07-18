@@ -38,6 +38,70 @@ class PostsController < ApplicationController
     @mains = Main.where(post_motivation_id: params[:id]).hash_tree
   end
   
+  def admin_webdev
+    @alibaba = params[:ahojmarynarzu]
+    if @alibaba == "true"
+      @received_post = Post.find(params[:id])
+    elsif @alibaba == "false"
+      @received_post = PostMotivation.find(params[:id])
+    end
+  end
+  
+  def delete_post
+    @alibaba = params[:alibaba]
+    if @alibaba == "true"
+      #@to_delete_post = Post.find(params[:id])
+      #@comments_deleted = Main.where(post_id: params[:id])
+      #@comments_deleted.destroy_all
+      #@to_delete_post.destroy
+      #redirect_to admin_path
+      
+      Post.find(params[:id]).destroy
+      redirect_to admin_path
+      
+      #@to_delete_post = Post.find(params[:id])
+      #Main.delete_all(post_id: params[:id])
+      #@to_delete_post.destroy
+      #redirect_to admin_path
+    elsif @alibaba == "false"
+      #@to_delete_post = PostMotivation.find(params[:id])
+      #@comments_deleted = Main.where(post_motivation_id: params[:id])
+      #@comments_deleted.destroy_all
+      #@to_delete_post.destroy
+      #redirect_to admin_path
+      
+      PostMotivation.find(params[:id]).destroy
+      redirect_to admin_path
+      
+      #@to_delete_post = PostMotivation.find(params[:id])
+      #Main.delete_all(post_motivation_id: params[:id])
+      #@to_delete_post.destroy
+      #redirect_to admin_path
+    end
+  end
+  
+  def edit_poscik
+    @alibaba = params[:alibaba]
+    if @alibaba == "true"
+      @post_to_edit = Post.find(params[:id])
+    elsif @alibaba == "false"
+      @post_to_edit = PostMotivation.find(params[:id])
+    end
+  end
+  
+  def apdejt
+    @alibaba = params[:alibaba]
+    if @alibaba == "true"
+      @about_to_be_edited = Post.find(params[:id])
+      @about_to_be_edited.update(edit_post_webdev_params)
+      redirect_to admin_path
+    elsif @alibaba == "false"
+      @about_to_be_edited = PostMotivation.find(params[:id])
+      @about_to_be_edited.update(edit_post_moti_params)
+      redirect_to admin_path
+    end
+  end
+  
   private
   
     def post_param_create_post
@@ -48,4 +112,13 @@ class PostsController < ApplicationController
       params.require(:post_motivation).permit(:title,:date,:short,:body)
     end
 
+    #UNIQUE PARAMS FOR EDITING POSTS
+      def edit_post_webdev_params
+        params.require(:post).permit(:title,:date,:short,:body)
+      end
+
+      def edit_post_moti_params
+        params.require(:post_motivation).permit(:title,:date,:short,:body)
+      end
+    #END OF UNIQUE PARAMS
 end

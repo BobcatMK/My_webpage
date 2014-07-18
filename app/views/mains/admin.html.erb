@@ -6,31 +6,20 @@
 <br />
 <br />
 <% @all_posts_webdevelopment.each do |post| %>
-	<table class="database_post">
-		<tr>
-			<td class="id"><%= p "id: #{post.id}" %></td>
-			<td class="name"><%= post.title %></td>
-		</tr>
-		<tr>
-			<td colspan="3" class="body">
-				<%= p "Short_description:" %>
-				<%= post.short %>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="3" class="body">
-				<%= p "Content:" %>
-				<%= post.body %>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="3">
-				<%= p "Date:" %>
-				<%= post.date %>
-			</td>
-		</tr>
-	</table>
-	
+	<%= link_to (admin_webdev_path(post.id,true)) do %>
+		<table class="database_post">
+			<tr>
+				<td class="id"><%= p "id: #{post.id}" %></td>
+				<td class="name"><%= post.title %></td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<%= p "Date:" %>
+					<%= post.date %>
+				</td>
+			</tr>
+		</table>
+	<% end %>
 <% end %>
 
 <p>Motivation, list of all posts</p>
@@ -40,34 +29,23 @@
 <br />
 
 <% @all_posts_motivation.each do |post| %>
-	<table class="database_post">
-		<tr>
-			<td class="id"><%= p "id: #{post.id}" %></td>
-			<td class="name"><%= post.title %></td>
-		</tr>
-		<tr>
-			<td colspan="3" class="body">
-				<%= p "Short_description:" %>
-				<%= post.short %>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="3" class="body">
-				<%= p "Content:" %>
-				<%= post.body %>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="3">
-				<%= p "Date:" %>
-				<%= post.date %>
-			</td>
-		</tr>
-	</table>
-	
+	<%= link_to (admin_webdev_path(post.id,false)) do %>
+		<table class="database_post">
+			<tr>
+				<td class="id"><%= p "id: #{post.id}" %></td>
+				<td class="name"><%= post.title %></td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<%= p "Date:" %>
+					<%= post.date %>
+				</td>
+			</tr>
+		</table>
+	<% end %>
 <% end %>
 
-<br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 <br />
 
 <% @all_comments.each do |posts| %>

@@ -24,6 +24,12 @@ MyWebpage::Application.routes.draw do
   match "save_motivation", to: "posts#save_motivation", via: "post"
   get "/web development/(:id)", to: "posts#learn_showpost", as: :learn_showpost
   get "motivation/(:id)", to: "posts#motivation_showpost", as: :motivation_showpost
+  
+  # FOR ADMIN WEBPAGE
+  get "/admin/web development/(:id)/(:ahojmarynarzu)", to: "posts#admin_webdev", as: :admin_webdev
+  get "/admin/delete_post/(:id)/(:alibaba)", to: "posts#delete_post", as: :delete_post
+  get "/admin/edit_poscik/(:id)/(:alibaba)", to: "posts#edit_poscik", as: :edit_poscik
+  patch "/admin/edit(:id)/(:alibaba)", to: "posts#apdejt", as: :apdejt
 	# END OF POSTS CONTROLLER
 
 	

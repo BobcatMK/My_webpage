@@ -1,9 +1,9 @@
 .database_post {
   border: 1px solid black;
-  width: 50%;
+  width: 90%;
   margin-bottom: 5px;
   border-collapse: collapse;
-  margin-left: 10%;
+  margin: auto;
 }
 .id {
   //display: table-cell;
@@ -16,27 +16,14 @@
   //display: table-cell;
   border: 1px solid black;
 }
-.parent {
-  //display: table-cell;
-  border: 1px solid black;
-  width: 35%;
-}
 .body {
   //display: table-cell;
   border: 1px solid black;
 }
-td {
-  border: 1px solid black;
-  text-align: left;
-  padding: 0;
+.date {
+  
 }
 
-a:link,
-a:visited,
-a:active {
-  color: blue;
-}
-
-a:hover {
-  color: tomato;
+.short {
+  
 }

@@ -1,0 +1,19 @@
+<% content_for(:title, "Edit post") %>
+
+<%= @post_to_edit.inspect %>
+<br />
+<%= form_for(@post_to_edit,:url => apdejt_path(@post_to_edit.id,@alibaba)) do |post_edit| %>
+	<div><%= post_edit.label :title %></div>
+	<div><%= post_edit.text_field :title %></div>
+	<br />
+	<div><%= post_edit.label :short %></div>
+	<div><%= post_edit.text_area :short %></div>
+	<br />
+	<div><%= post_edit.label :body %></div>
+	<div><%= post_edit.text_area :body %></div>
+	<br />
+	<div><%= post_edit.label :date %></div>
+	<div><%= post_edit.text_field :date %></div>
+	<br />
+	<div><%= post_edit.submit "Submit" %></div>
+<% end %>
