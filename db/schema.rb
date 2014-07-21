@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140718134157) do
+ActiveRecord::Schema.define(version: 20140721150730) do
 
   create_table "main_hierarchies", id: false, force: true do |t|
     t.integer "ancestor_id",   null: false
@@ -31,6 +31,16 @@ ActiveRecord::Schema.define(version: 20140718134157) do
     t.integer  "parent_id"
     t.integer  "post_id"
     t.integer  "post_motivation_id"
+  end
+
+  create_table "mystories", force: true do |t|
+    t.string   "name"
+    t.text     "body"
+    t.string   "picture1"
+    t.string   "picture2"
+    t.string   "picture3"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "post_motivations", force: true do |t|
@@ -60,6 +70,7 @@ ActiveRecord::Schema.define(version: 20140718134157) do
     t.string   "link"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "picture4"
   end
 
 end

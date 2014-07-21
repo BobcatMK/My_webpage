@@ -1,22 +1,44 @@
 <%= stylesheet_link_tag "main_css/about" %>
 <% content_for(:title,"MK About") %>
 
-<div class="post">
-	<div class="post_title" style="font-family:'Lato'; font-weight:900; font-size: 3em; line-height: 0.6;">MY FIRST POST TITLE TEXT <br /><span style="font-weight:100; font-size:0.5em;">Release date: 20.06.2014</span></div>
-	<br />
-	<div class="short_desc" style="font-family:'Lato'; font-weight:300; font-size: 1.4em;"><p>This is my text short description, it's my first short description so be full of empathy, because apparently I need a lot of it my simple, one cocked friend. Here I'm going to tell you 10 reasons to follow your dreams:
-		<br />
-		<br />1)It makes you become yourself
-		<br />2)It makes you feel alive
-		<br />3)It makes you happy
-		<br />4)It makes you become who you always wanted to be
-		<br />5)It makes you grateful
-		<br />6)It makes you better person
-		<br />7)It makes you more empathic
-		<br />8)It makes you feel lighter on your soul
-		<br />9)It makes you richer
-		<br />10)It makes you have your dreams as reality.</p>
-	</div>
+<br />
+<br />
+
+<div class="font main-div">
+	<center>
+		<strong><%= @mystory.name %></strong>
+	</center>
+	<p><%= @mystory.body %></p>
 </div>
 
-<div class="hr">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div>
+<br />
+<br />
+
+<% @all_projects.each do |project| %>
+	<div class="main-div font project-div">
+		<center>
+					<p>Project's name:</p>
+			<%= link_to(show_project_path(project.id)) do %>
+					<p>"<%= project.name %>"</p>
+			<% end %>
+					<p>Visit that webpage:<br /> <span class="ale"><%= link_to project.link, project.link %></span></p>
+					<p>Author: Matthew Kilan</p>
+			<%= link_to(show_project_path(project.id)) do %>
+				<p>CLICK TO READ MORE</p>
+					<table>
+						<tr>
+							<td><%= image_tag(project.picture1) %></td>
+							<td><%= image_tag(project.picture2) %></td>
+						</tr>
+						<tr>
+							<td><%= image_tag(project.picture3) %></td>
+							<td><%= image_tag(project.picture4) %></td>
+						</tr>
+					</table>
+				
+			<% end %>
+		</center>
+	</div>
+	<br />
+	<br />
+<% end %>

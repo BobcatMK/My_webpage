@@ -1,0 +1,18 @@
+<%= stylesheet_link_tag("main_css/show_project")%>
+<% content_for(:title, "MK Project") %>
+	
+	<center>
+		<div class="font main-div">
+			<p><%= @particular_project.name %></p>
+			<table>
+				<tr>
+					<td><%= image_tag(@particular_project.picture1) %></td>
+					<td><%= image_tag(@particular_project.picture2) %></td>
+				</tr>
+			</table>
+			<p><%= @particular_project.description %></p>
+			<p><%= link_to @particular_project.link,@particular_project.link %></p>
+		</div>
+	</center>	
+	<br />
+	<br />

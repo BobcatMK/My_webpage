@@ -48,6 +48,24 @@
 
 <br /><br />
 
+<p>Add new projects that are completed/work in progress</p>
+<% @projects_all.each do |project| %>
+	<%= link_to(admin_show_project_path(project.id)) do %>
+		<table class="database_project">
+			
+			<tr>
+				<td class="id"><%= p "id: #{project.id}" %></td>
+				<td class="name" ><%= project.name %></td>
+			</tr>
+			
+		</table>
+	<% end %>
+	<p>- - - - - - - - - - - - - - - - - - - - - - - - - - -</p>
+<% end %>
+
+<br />
+<br />
+
 <p>All posts in Web development and Motivation category:</p>
 <% @all_comments.each do |posts| %>
 	<table class="database_post">

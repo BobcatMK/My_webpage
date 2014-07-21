@@ -35,6 +35,7 @@ MyWebpage::Application.routes.draw do
 	# END OF POSTS CONTROLLER
 
 	# RESTS CONTROLLER
-	
+	get "projects/(:id)/(:name)", to: "rests#show_project", as: :show_project
+	get "admin_show_projects/(:id)", to: "rests#admin_show_project", as: :admin_show_project
 	# END OF RESTS CONTROLLER
 end

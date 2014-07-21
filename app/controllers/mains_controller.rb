@@ -15,6 +15,8 @@ class MainsController < ApplicationController
   end
 
   def about
+    @all_projects = Projectsabout.all
+    @mystory = Mystory.find(1)
   end
 
   def books_courses
@@ -74,6 +76,7 @@ class MainsController < ApplicationController
     @all_comments = Main.all
     @all_posts_webdevelopment = Post.all
     @all_posts_motivation = PostMotivation.all
+    @projects_all = Projectsabout.all
   end
   
   def destroy

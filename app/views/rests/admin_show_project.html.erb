@@ -1,0 +1,30 @@
+<%= stylesheet_link_tag("main_css/admin_project")%>
+<% content_for(:title, "Admin Project") %>
+	
+<br />
+
+<table class="database_project">
+	<tr>
+		<td style="width: 30%; border: 1px solid black;"><%= @admin_particular_project.id %></td>
+		<td style="width: 70%; border: 1px solid black;"><%= @admin_particular_project.name %></td>
+	</tr>
+	<tr>
+		<td colspan="2" style="border: 1px solid black;"><%= @admin_particular_project.picture1 %></td>	
+	</tr>
+	<tr>
+		<td colspan="2" style="border: 1px solid black;"><%= @admin_particular_project.picture2 %></td>	
+	</tr>
+	<tr>
+		<td colspan="2" style="border: 1px solid black;"><%= @admin_particular_project.picture3 %></td>	
+	</tr>
+	<tr>
+		<td colspan="2" style="border: 1px solid black;"><%= @admin_particular_project.picture4 %></td>	
+	</tr>
+	<tr>
+		<td colspan="2" style="border: 1px solid black;"><%= @admin_particular_project.description %></td>	
+	</tr>
+	<tr>
+		<td><%= link_to("Edit",learn_webdeb_path) %></td>
+		<td><%= link_to("Delete",learn_webdeb_path)%></td>
+	</tr>
+</table>
