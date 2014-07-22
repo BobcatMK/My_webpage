@@ -1,0 +1,28 @@
+<% content_for(:title,"Admin Contact Info") %>
+
+<%= form_for(@contact_information_show,:url => contact_information_edit_path) do |edit| %>
+	
+	<div>
+		<%= edit.label :name_surname %>
+		<%= edit.text_field :name_surname %>
+	</div>
+	<div>
+		<%= edit.label :email_address %>
+		<%= edit.text_field :email_address %>
+	</div>
+	<div>
+		<%= edit.label :phone_number %>
+		<%= edit.text_field :phone_number %>
+	</div>
+	<div>
+		<%= edit.label :facebook %>
+		<%= edit.text_field :facebook %>
+	</div>
+	<div>
+		<%= edit.label :twitter %>
+		<%= edit.text_field :twitter %>
+	</div>
+	<div>
+		<%= edit.submit("Submit",data: {confirm: "Are you sure?"}) %>
+	</div>
+<% end %>

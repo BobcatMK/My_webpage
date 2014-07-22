@@ -1,0 +1,35 @@
+<% content_for(:title,"Editing project") %>
+
+<%= form_for(@project_to_edit,:url => edit_project_final_path(@project_to_edit.id)) do |project| %>
+	<div>
+		<%= project.label(:name) %>
+		<%= project.text_field(:name) %>
+	</div>
+	<div>
+		<%= project.label(:description) %>
+		<%= project.text_area(:description) %>
+	</div>
+	<div>
+		<%= project.label(:picture1) %>
+		<%= project.text_field(:picture1) %>
+	</div>
+	<div>
+		<%= project.label(:picture2) %>
+		<%= project.text_field(:picture2) %>
+	</div>
+	<div>
+		<%= project.label(:picture3) %>
+		<%= project.text_field(:picture3) %>
+	</div>
+	<div>
+		<%= project.label(:picture4) %>
+		<%= project.text_field(:picture4) %>
+	</div>
+	<div>
+		<%= project.label(:link) %>
+		<%= project.text_field(:link) %>
+	</div>
+	<div>
+		<%= project.submit("Submit",data: {confirm: "Are you sure?"}) %>
+	</div>
+<% end %>

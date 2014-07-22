@@ -14,14 +14,26 @@
 <br/>
 <br/>
 
-<div>
-	<%= simple_form_for(@contact,:url => url_for(controller: "mains", action: "send_contact")) do |f| %>
-		<%= f.error_notification %>
-		<%= f.input :name %>
-		<%= f.input :email %>
-		<%= f.input :content, as: :text %>
-		<%= f.button :submit, "Submit" %>
-	<% end %>
+
+
+<div class="font">
+	<p>CONTACT ME</p>
+	<div class="divs"><b>My full name:&nbsp;&nbsp;&nbsp;&nbsp;</b><%= @contactinfo.name_surname %></div>
+	<div class="divs"><b>Email:&nbsp;&nbsp;&nbsp;&nbsp;</b><%= @contactinfo.email_address %></div>
+	<div class="divs"><b>Phone number:&nbsp;&nbsp;&nbsp;&nbsp;</b><%= @contactinfo.phone_number %></div>
+	<div class="divs"><b>Facebook:&nbsp;&nbsp;&nbsp;&nbsp;</b><%= link_to(@contactinfo.facebook,@contactinfo.facebook) %></div>
+	<div class="divs"><b>Twitter:&nbsp;&nbsp;&nbsp;&nbsp;</b><%= link_to(@contactinfo.twitter,@contactinfo.twitter) %></div>
 </div>
 
-
+<div class="font">
+	<p>QUICK CONTACT FORM (you'll send me an email):</p>
+	<div>
+		<%= simple_form_for(@contact,:url => url_for(controller: "mains", action: "send_contact")) do |f| %>
+			<%= f.error_notification %>
+			<%= f.input :name %>
+			<%= f.input :email %>
+			<%= f.input :content, as: :text %>
+			<%= f.button :submit, "Submit" %>
+		<% end %>
+	</div>
+</div>

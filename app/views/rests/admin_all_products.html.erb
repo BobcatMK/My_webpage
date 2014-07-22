@@ -1,0 +1,27 @@
+<%= stylesheet_link_tag("main_css/admin_all_products")%>
+<% content_for(:title, "ADMIN All products") %>
+
+<p><%= link_to("Create new product",create_new_product_path) %></p>
+
+<% @show_all_products.each do |product| %>
+	<table class="product-table">
+		<tr>
+			<td style="border: 1px solid black;">id: <%= product.id %></td>
+			<td style="border: 1px solid black;">name: <%= product.name %></td>
+		</tr>
+		<tr>
+			<td style="border: 1px solid black;">author: <%= product.author %></td>
+			<td style="border: 1px solid black;">price: <%= product.price %></td>
+		</tr>
+		<tr>
+			<td><%= link_to("Edit",edit_product_path(product.id)) %></td>
+			<td>
+				<%= form_for(product,:url => delete_product_path) do |eskimos| %>
+					<%= eskimos.hidden_field :id %>
+					<%= eskimos.submit("Delete",data: {confirm: "Are you sure?"}) %>
+				<% end %>
+			</td>
+			<!--<td><%= link_to("Delete", delete_product_path ,data: {confirm: "Are you sure?"}) %></td>-->
+		</tr>
+	</table>
+<% end %>

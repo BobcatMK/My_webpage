@@ -47,8 +47,14 @@
 <% end %>
 
 <br /><br />
+<div>List of all application's comments:</div>
+<p><%= link_to("Link to all comments in Web development and Motivation category",view_all_comments_path) %></p>
+<br /><br />
 
 <p>Add new projects that are completed/work in progress</p>
+
+<p><%= link_to("Create new project description",creating_project_path)%></p>
+
 <% @projects_all.each do |project| %>
 	<%= link_to(admin_show_project_path(project.id)) do %>
 		<table class="database_project">
@@ -66,32 +72,57 @@
 <br />
 <br />
 
-<p>All posts in Web development and Motivation category:</p>
-<% @all_comments.each do |posts| %>
-	<table class="database_post">
-		<tr>
-			<td class="id"><%= p "id: #{posts.id}" %></td>
-			<td class="name"><%= posts.title %></td>
-			<td class="parent">
-				<% if posts.parent_id == nil %>
-					<%= p "parent_id: root" %>
-				<% else %>
-					<%= p "parent_id: #{posts.parent_id}" %>
-				<% end %>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="3" class="body">
-				<%= p "Content:" %>
-				<%= posts.body %>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="3"><%= link_to "Delete", main_path(posts),method: :delete, data: { confirm: "Are you sure?" }  %></td>
-		</tr>
-		<tr>
-			<td colspan="3"><%= link_to "Edit", edit_main_path(posts) %></td>
-		</tr>
-	</table>
-	
+<%= form_for(@mystory,:url => edit_mystory_admin_path(@mystory.id)) do |story| %>
+	<div>
+		<%= story.label :name %>
+		<%= story.text_field :name %>
+	</div>
+	<div>
+		<%= story.label :body %>
+		<%= story.text_area :body %>
+	</div>
+	<div>
+		<%= story.label :picture1 %>
+		<%= story.text_field :picture1 %>
+	</div>
+	<div>
+		<%= story.label :picture2 %>
+		<%= story.text_field :picture2 %>
+	</div>
+	<div>
+		<%= story.label :picture3 %>
+		<%= story.text_field :picture3 %>
+	</div>
+	<div>
+		<%= story.submit("Submit",data: {confirm: "Are you sure?"}) %>
+	</div>
 <% end %>
+
+<br />
+<br />
+
+<div>Click below to see list of all books & courses</div>
+<%= link_to("All books & courses",admin_all_products_path) %>
+
+<br />
+<br />
+
+<div>Click below to edit contact informations</div>
+<table>
+	<tr>
+		<td>Full name: <%= @contact_info.name_surname %></td>
+	</tr>
+	<tr>
+		<td>Facebook: <%= @contact_info.facebook %></td>
+	</tr>
+	<tr>
+		<td>Twitter: <%= @contact_info.twitter %></td>
+	</tr>
+	<tr>
+		<td>Email address: <%= @contact_info.email_address %></td>
+	</tr>
+	<tr>
+		<td>Phone number: <%= @contact_info.phone_number %></td>
+	</tr>
+</table>
+<%= link_to("Contact informations",contact_information_path)%>

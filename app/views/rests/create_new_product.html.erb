@@ -1,0 +1,50 @@
+<% content_for(:title,"ADMIN Create Product") %>
+
+<%= form_for(@create_product,:url => create_product_final_path) do |product| %>
+
+	<%= product.hidden_field :id %>
+	
+	<div>
+		<%= product.label :name %>
+		<%= product.text_field :name %>
+	</div>
+	<div>
+		<%= product.label :author %>
+		<%= product.text_field :author %>
+	</div>
+	<div>
+		<%= product.label :short_description %>
+		<%= product.text_area :short_description %>
+	</div>
+	<div>
+		<%= product.label :long_description %>
+		<%= product.text_area :long_description %>
+	</div>
+	<div>
+		<%= product.label :price %>
+		<%= product.text_field :price %>
+	</div>
+	<div>
+		<%= product.label :affiliate_link %>
+		<%= product.text_field :affiliate_link %>
+	</div>
+	<div>
+		<%= product.label :picture1 %>
+		<%= product.text_field :picture1 %>
+	</div>
+	<div>
+		<%= product.label :picture2 %>
+		<%= product.text_field :picture2 %>
+	</div>
+	<div>
+		<%= product.label :picture3 %>
+		<%= product.text_field :picture3 %>
+	</div>
+	<div>
+		<%= product.label :picture4 %>
+		<%= product.text_field :picture4 %>
+	</div>
+	<div>
+		<%= product.submit("Submit",data: {confirm: "Are you sure?"}) %>
+	</div>
+<% end %>

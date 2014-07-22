@@ -20,11 +20,13 @@ class MainsController < ApplicationController
   end
 
   def books_courses
+    @all_products = Product.all
   end
 
   def contact
     @mail = Mailinglist.new
     @contact = Contact.new
+    @contactinfo = Contactinfo.find(1)
   end
   
   def create
@@ -73,10 +75,15 @@ class MainsController < ApplicationController
   end
   
   def admin
-    @all_comments = Main.all
     @all_posts_webdevelopment = Post.all
     @all_posts_motivation = PostMotivation.all
     @projects_all = Projectsabout.all
+    @mystory = Mystory.find(1)
+    @contact_info = Contactinfo.find(1)
+  end
+  
+  def view_all_comments
+    @all_comments = Main.all
   end
   
   def destroy
@@ -96,6 +103,12 @@ class MainsController < ApplicationController
     redirect_to admin_path
   end
   
+  def edit_mystory_admin
+    @mystory_edit = Mystory.find(1)
+    @mystory_edit.update(edit_mystory_admin_params)
+    redirect_to admin_path
+  end
+  
   private
     
     def main_params
@@ -108,6 +121,10 @@ class MainsController < ApplicationController
   
     def main_params_mailing_list
       params.require(:mailinglist).permit(:email)
+    end
+    
+    def edit_mystory_admin_params
+      params.require(:mystory).permit(:name,:body,:picture1,:picture2,:picture3)
     end
     
     def authenticate

@@ -24,7 +24,7 @@
 		<td colspan="2" style="border: 1px solid black;"><%= @admin_particular_project.description %></td>	
 	</tr>
 	<tr>
-		<td><%= link_to("Edit",learn_webdeb_path) %></td>
-		<td><%= link_to("Delete",learn_webdeb_path)%></td>
+		<td><%= link_to("Edit",editing_project_path(@admin_particular_project.id)) %></td>
+		<td><%= link_to("Delete",admin_show_project_delete_path(@admin_particular_project.id), data: {confirm: "Are you sure?"})%></td>
 	</tr>
 </table>

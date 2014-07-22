@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140721150730) do
+ActiveRecord::Schema.define(version: 20140722144229) do
+
+  create_table "contactinfos", force: true do |t|
+    t.string   "name_surname"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "email_address"
+    t.string   "phone_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "main_hierarchies", id: false, force: true do |t|
     t.integer "ancestor_id",   null: false
@@ -59,6 +69,21 @@ ActiveRecord::Schema.define(version: 20140721150730) do
     t.string   "date"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "products", force: true do |t|
+    t.string   "name"
+    t.text     "short_description"
+    t.text     "long_description"
+    t.string   "affiliate_link"
+    t.string   "picture1"
+    t.string   "picture2"
+    t.string   "picture3"
+    t.string   "picture4"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "author"
+    t.decimal  "price"
   end
 
   create_table "projectsabouts", force: true do |t|
