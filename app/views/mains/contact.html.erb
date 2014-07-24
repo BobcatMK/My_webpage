@@ -14,8 +14,6 @@
 <br/>
 <br/>
 
-
-
 <div class="font">
 	<p>CONTACT ME</p>
 	<div class="divs"><b>My full name:&nbsp;&nbsp;&nbsp;&nbsp;</b><%= @contactinfo.name_surname %></div>
@@ -24,16 +22,22 @@
 	<div class="divs"><b>Facebook:&nbsp;&nbsp;&nbsp;&nbsp;</b><%= link_to(@contactinfo.facebook,@contactinfo.facebook) %></div>
 	<div class="divs"><b>Twitter:&nbsp;&nbsp;&nbsp;&nbsp;</b><%= link_to(@contactinfo.twitter,@contactinfo.twitter) %></div>
 </div>
-
+<br />
+<br />
+<center>
 <div class="font">
 	<p>QUICK CONTACT FORM (you'll send me an email):</p>
 	<div>
 		<%= simple_form_for(@contact,:url => url_for(controller: "mains", action: "send_contact")) do |f| %>
 			<%= f.error_notification %>
-			<%= f.input :name %>
-			<%= f.input :email %>
-			<%= f.input :content, as: :text %>
-			<%= f.button :submit, "Submit" %>
+			<div>Your name:</div><%= f.input :name, label: false, :input_html => {size: 36} %>
+			<div>Your email:</div><%= f.input :email, label: false, :input_html => {size: 36} %>
+			<div>Content:</div><%= f.input :content, label: false, as: :text, :input_html => {size: "51x20", class: "contact_form"} %>
+			<%= f.button :submit, "Submit", class: "contact_submit"%>
 		<% end %>
 	</div>
+	<br />
+	<br />
+	<br />
 </div>
+</center>

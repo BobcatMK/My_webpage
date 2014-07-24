@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+  before_action :authenticate, only: [:update_edit_post_comment,:edit_post_comment,:delete_post_comment,:create,
+  :save_motivation,:create_post,:create_motivation,:admin_webdev,:delete_post,:edit_poscik,:apdejt]
+  
   def create
     @post_created = Post.new(post_param_create_post)
     @post_created.save
@@ -142,7 +145,13 @@ class PostsController < ApplicationController
     
     #PARAMS FOR EDITING POST'S COMMENT
       def update_post_comment_params
-        params.require(:main).permit(:title,:body)
+        params.require(:main).permit(:name,:content)
       end
     #END OF PARAMS FOR EDITING POST'S COMMENT
+    
+    def authenticate
+      authenticate_or_request_with_http_basic do |name, password|
+        name = ENV["ADMIN_LOGIN"] && password == ENV["ADMIN_PASSWORD"]
+      end
+    end
 end

@@ -8,7 +8,8 @@
 	<center>
 		<strong><%= @mystory.name %></strong>
 	</center>
-	<p><%= @mystory.body.html_safe %></p>
+	<p><%= simple_format(@mystory.body,{},{:wrapper_tag => "div"}) %></p>
+	
 </div>
 
 <br />
@@ -27,12 +28,12 @@
 				<p>CLICK TO READ MORE</p>
 					<table>
 						<tr>
-							<td><%= image_tag(project.picture1) %></td>
-							<td><%= image_tag(project.picture2) %></td>
+							<td><%= image_tag(project.picture1,:alt => "picture",size: "320x240") %></td>
+							<td><%= image_tag(project.picture2,:alt => "picture",size: "320x240") %></td>
 						</tr>
 						<tr>
-							<td><%= image_tag(project.picture3) %></td>
-							<td><%= image_tag(project.picture4) %></td>
+							<td><%= image_tag(project.picture3,:alt => "picture",size: "320x240") %></td>
+							<td><%= image_tag(project.picture4,:alt => "picture",size: "320x240") %></td>
 						</tr>
 					</table>
 				

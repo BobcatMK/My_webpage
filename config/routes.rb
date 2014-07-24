@@ -1,9 +1,16 @@
 MyWebpage::Application.routes.draw do
   # MAINS CONTROLLER
-  root 'mains#learn_webdeb'
-	match "learn_webdeb", to:"mains#learn_webdeb", via: "get"
-	match "learn_webdeb", to:"mains#learn_webdeb", via: "post"
-	match "motivation", to:"mains#motivation", via: "get"
+  root 'mains#web_development'
+	#match "web development", to:"mains#web_development", via: "get"
+	get "web development", to: "mains#web_development", as: :web_development
+	#match "web development", to:"mains#web_development", via: "post"
+	post "web development", to: "mains#web_development", as: :web_development_post
+	
+	#match "motivation", to:"mains#motivation", via: "get"
+	get "inspiring", to: "mains#inspiring", as: :inspiring
+	#match "motivation", to:"mains#motivation", via: "post"
+	post "inspiring", to: "mains#inspiring", as: :inspiring_post
+	
 	match "about", to: "mains#about", via: "get"
 	match "books_courses", to: "mains#books_courses", via: "get"
 	match "contact", to: "mains#contact", via: "get"
@@ -18,6 +25,10 @@ MyWebpage::Application.routes.draw do
 	patch "admin/mystory/(:id)", to: "mains#edit_mystory_admin",as: :edit_mystory_admin
 	# END OF MAINS CONTROLLER
 	post '/mains/new/(:parent_id)/(:post_id)/(:post_motivation_id)', to: "mains#new", as: :new_main_dupa
+	post "/mains/testonly", to: "mains#testonly"
+	
+	
+	
 	
 	# POSTS CONTROLLER
   resources :posts
@@ -26,6 +37,8 @@ MyWebpage::Application.routes.draw do
   match "save_motivation", to: "posts#save_motivation", via: "post"
   get "/web development/(:id)", to: "posts#learn_showpost", as: :learn_showpost
   get "motivation/(:id)", to: "posts#motivation_showpost", as: :motivation_showpost
+  post "/web development/(:id)", to: "posts#learn_showpost", as: :learn_showpost_back
+  post "motivation/(:id)", to: "posts#motivation_showpost", as: :motivation_showpost_back
   # FOR ADMIN WEBPAGE
   get "/admin/web development/(:id)/(:ahojmarynarzu)", to: "posts#admin_webdev", as: :admin_webdev
   get "/admin/delete_post/(:id)/(:alibaba)", to: "posts#delete_post", as: :delete_post

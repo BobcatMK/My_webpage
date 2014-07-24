@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140722144229) do
+ActiveRecord::Schema.define(version: 20140724080930) do
 
   create_table "contactinfos", force: true do |t|
     t.string   "name_surname"
@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(version: 20140722144229) do
   add_index "main_hierarchies", ["descendant_id"], name: "comment_desc_idx"
 
   create_table "mains", force: true do |t|
-    t.string   "title"
-    t.text     "body"
+    t.string   "name"
+    t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_url"

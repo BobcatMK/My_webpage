@@ -2,10 +2,10 @@
 	<tbody>
 		<tr>
 			<td rowspan="1" style="width: 75px;" ><%= image_tag(main.image_url, :alt => "Guest picture", size: "75x75")%></td>
-			<td class="comment-name"><%= main.title %><br/><%= l(main.created_at, format: '%d %B %Y, %H:%M:%S')%></td>
+			<td class="comment-name">Name: <%= main.name %><br/><%= l(main.created_at, format: '%d %B %Y, %H:%M:%S')%></td>
 		</tr>
 		<tr>
-			<td colspan="2" class="comment-body"><%= main.body %></td>
+			<td colspan="2" class="comment-body"><%= simple_format(main.content,{},{:wrapper_tag => "div"}) %></td>
 		</tr>
 		<tr>
 			<td colspan="3">
@@ -15,6 +15,7 @@
 						<small>There are no replies yet!</small>
 					<% end %>
 					<div><%= link_to "Reply", new_main_path(main.id,main.post_id,main.post_motivation_id) %></div>
+					<div>---------</div>
 					<br />
 				<% end %>
 			</td>

@@ -1,12 +1,10 @@
 <%= stylesheet_link_tag "main_css/book&courses" %>
 <% content_for(:title,"MK Books&Courses") %>
-
-<br />
 <!--
 <table class="product-table">	
 	<tr>
 		<td class="name">Persil Power Black</td>
-		<td class="picture" rowspan="2"><%= image_tag("200jeden.jpg") %></td>
+		<td class="picture" rowspan="2"><%# image_tag("200jeden.jpg") %></td>
 	</tr>
 	<tr>
 		<td class="short-desc">Jestem krotkim opisem</td>
@@ -15,19 +13,16 @@
 		<td class="affiliate" colspan="2">link partnerski</td>
 	</tr>
 </table>
-
-<br />
-<br />
 -->
 <% @all_products.each do |product| %>
 	<br />
-	<br />
 	<div class="whole-div clear-fix font">
-		<div class="div-picture"><%= image_tag(product.picture1) %></div>
+		<div class="div-picture"><%= image_tag(product.picture1,{:alt => "Picture"}) %></div>
 		<div class="div-name"><b><%= product.name %></b></div>
 		<div class="div-author">by <%= product.author %></div>
 		<p class="div-short-desc"><%= product.short_description %></p>
 		<p class="div-affiliate"><%= link_to(product.affiliate_link,product.affiliate_link) %></p>
-		<center><p class="enc"><%= link_to("--> READ MORE <--",learn_webdeb_path)%></p></center>
+		<center><p class="enc"><%= link_to("--> READ MORE <--",web_development_path)%></p></center>
 	</div>
+	<center><div>- - - - - - - - - - - - - - - - - - - - - - - - - -</div></center>
 <% end %>

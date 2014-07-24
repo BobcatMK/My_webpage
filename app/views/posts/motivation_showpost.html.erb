@@ -1,14 +1,20 @@
+<%= stylesheet_link_tag("main_css/motivation_showpost")%>
+<% content_for(:title,"MK #{@post_to_render3.title}") %>
+
+<!--<div><%# button_to("Go back",motivation_path) %></div>-->
 <div class="post">	
-	<div class="post_title" style="font-family:'Lato'; font-weight:900; font-size: 3em; line-height: 0.6;"><%= @post_to_render3.title.upcase %><br /><span style="font-weight:100; font-size:0.5em;">Release date: <%= @post_to_render3.date %></span></div>
+	<div class="post_title"><%= simple_format(@post_to_render3.title.upcase,{},{:wrapper_tag => "div"}) %></div>
+	<span class="date">Release date: <%= @post_to_render3.date %></span>
 	<br />
-	<div class="short_desc" style="font-family:'Lato'; font-weight:300; font-size: 1.4em;">
-		<%= @post_to_render3.body %>
+	<div class="long_desc">
+		<%= simple_format(@post_to_render3.body,{},{:wrapper_tag => "div"}) %>
 	</div>
-</div>
-<div class="hr">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div>
+	<div class="hr">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div>
+	<!--<p><%# link_to("Add new comment!",new_main_path(0,0,@post_to_render3.id), class: "link") %></p>-->
+	<center>
+		<p><%= button_to "Add new comment!", new_main_dupa_path(0,0,@post_to_render3.id), class: "button" %></p>
+	</center>
+</div>	
 <br />
 <br />
-<%= link_to("Add new comment",new_main_path(0,0,@post_to_render3.id)) %>
-<br />
-<br />
-<%= mains_tree_for @mains %>
+<span class="all-posts-comments"><%= mains_tree_for @mains %></span>

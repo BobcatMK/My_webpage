@@ -7,16 +7,15 @@
 	<%= mai.hidden_field :post_motivation_id %>
 <!-- 25 , 37x10 -->
 	<div>
-		<div><%= mai.label :title %></div>
-		<%= mai.text_field :title, class: "textfield" %>
+		<div><%= mai.label :name %></div>
+		<%= mai.text_field :name, class: "textfield" %>
 	</div>
 	<div>
-		<div><%= mai.label :body %></div>
-		<%= mai.text_area :body %>
+		<div><%= mai.label :content %></div>
+		<%= mai.text_area :content %>
 	</div>
 	<div>
-		<%= mai.submit "Save", :class => "submit-button" %>
+		<%= mai.submit "Save", :class => "submit-button", data: {:confirm => "Are you sure?"} %>
 	</div>
-
 <% end %>
 

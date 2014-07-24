@@ -1,4 +1,6 @@
 class RestsController < ApplicationController
+  before_action :authenticate, except: [:show_project]
+  
   def show_project
     @particular_project = Projectsabout.find(params[:id])
   end
@@ -85,6 +87,12 @@ class RestsController < ApplicationController
     
     def contact_info_params
       params.require(:contactinfo).permit(:name_surname,:facebook,:twitter,:phone_number,:email_address)
+    end
+    
+    def authenticate
+      authenticate_or_request_with_http_basic do |name, password|
+        name = ENV["ADMIN_LOGIN"] && password == ENV["ADMIN_PASSWORD"]
+      end
     end
 end
 

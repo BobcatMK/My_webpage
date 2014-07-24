@@ -1,5 +1,14 @@
-<%= stylesheet_link_tag("main_css/new")%>
-<% content_for(:title,"Add comment") %>
+<% if @main.post_id.to_i > 0 %>
+	<%= stylesheet_link_tag("main_css/new-webdev-comments") %>
+<% elsif @main.post_motivation_id.to_i > 0 %>
+	<%= stylesheet_link_tag("main_css/new-motivation-comments") %>
+<% end %>
+
+<% if @main.parent %>
+		<% content_for(:title,"Reply to comment") %>
+<% else %>
+		<% content_for(:title,"Add comment") %>
+<% end %>
 
 <div class="margin-auto">
 	<% if @main.parent %>
@@ -34,16 +43,11 @@
 			</div>
 		</div>
 		<br />
-			<!--
-			<div>
-				<%= @main.errors.messages[:title] %>
-				<%= @main.errors.messages[:body] %>
-			</div>
-			-->
 	<% end %>
 	
 	<% if @main.parent %>
 		<%= render "main", main: @main.parent, from_reply_form: true %>
+		<br />
 	<% end %>
 	
 	<%= render :partial => "form" %>
@@ -54,10 +58,10 @@
 	<%# @post_selected.inspect %>
 	-->
 	
-	<br />
-	<br />
+	<% if @main.post_id.to_i > 0 %>
+		<%= button_to "Go back", learn_showpost_back_path(@main.post_id), :class => "submit-button" %>
+	<% elsif @main.post_motivation_id.to_i > 0 %>
+		<%= button_to "Go back", motivation_showpost_back_path(@main.post_motivation_id), :class => "submit-button" %>
+	<% end %>
 	
-	<%= link_to "Click to go back", learn_webdeb_path, style: "text-decoration: none;" %>
-	
-	<%= button_to "przycisk", learn_webdeb_path %>
 </div>

@@ -1,7 +1,7 @@
 class MainsController < ApplicationController
-  before_action :authenticate, only: [:admin]
+  before_action :authenticate, only: [:admin,:view_all_comments,:edit,:destroy,:update,:edit_mystory_admin]
   
-  def learn_webdeb
+  def web_development
     @post_all = Post.all
     @sort_reverse = @post_all.sort.reverse
   end
@@ -15,7 +15,7 @@ class MainsController < ApplicationController
     end
   end
 
-  def motivation
+  def inspiring
     @posts = PostMotivation.all
     @sort_rev = @posts.sort.reverse
   end
@@ -40,19 +40,18 @@ class MainsController < ApplicationController
       parent = Main.find_by_id(params[:main].delete(:parent_id))
       @main = parent.children.build(main_params)
     else
-      @main = Main.new(main_params)
-      @main.save
+      @main = Main.create(main_params)
     end
     
     if @main.post_motivation_id > 0
       if @main.save
-        redirect_to motivation_path
+        redirect_to motivation_showpost_path(@main.post_motivation_id)
       else
         render :new
       end
     elsif @main.post_id > 0
       if @main.save
-        redirect_to learn_webdeb_path
+        redirect_to learn_showpost_path(@main.post_id)
       else
         render :new
       end
@@ -105,8 +104,7 @@ class MainsController < ApplicationController
   
   def update
     @comment_edit = Main.find(params[:id])
-    @comment_edit.update(params[:main].permit(:title,:body))
-    
+    @comment_edit.update(params[:main].permit(:name,:content))
     redirect_to admin_path
   end
   
@@ -116,10 +114,15 @@ class MainsController < ApplicationController
     redirect_to admin_path
   end
   
+  def testonly
+    # @main = Main.new(main_params)
+    
+  end
+  
   private
     
     def main_params
-      params.require(:main).permit(:title, :body, :image_url, :post_id, :post_motivation_id) 
+      params.require(:main).permit(:name, :content, :image_url, :post_id, :post_motivation_id) 
     end
     
     def main_params_contact

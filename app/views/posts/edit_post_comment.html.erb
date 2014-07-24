@@ -4,11 +4,11 @@
 
 <%= form_for(@comment_to_be_edited, :url => update_edit_post_comment_path(@comment_to_be_edited.id)) do |comment| %>
 	<br />
-	<div><%= comment.label :title %></div>
-	<div><%= comment.text_field :title %></div>
+	<div><%= comment.label :name %></div>
+	<div><%= comment.text_field :name %></div>
 	<br />
-	<div><%= comment.label :body %></div>
-	<div><%= comment.text_area :body %></div>
+	<div><%= comment.label :content %></div>
+	<div><%= comment.text_area :content %></div>
 	<br />
 	<div><%= comment.submit "Submit " %></div>
 <% end %>

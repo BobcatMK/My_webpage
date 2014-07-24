@@ -1,12 +1,12 @@
 <% content_for(:title,"MK #{@post_to_render2.title}") %>
 <%= stylesheet_link_tag("main_css/learn_showpost") %>
-
+<!--<div><%# button_to "Go back", learn_webdeb_path %></div>-->
 <div class="post">
-	<div class="post_title" ><%= @post_to_render2.title.upcase %></div>
+	<div class="post_title" ><%= simple_format(@post_to_render2.title.upcase,{},{:wrapper_tag => "div"}) %></div>
 	<div class="date">Release date: <%= @post_to_render2.date %></div>
 	<br />
 	<div class="long_desc">
-		<%= @post_to_render2.body %>
+		<%= simple_format(@post_to_render2.body,{},{:wrapper_tag => "div"}) %>
 	</div>
 	<div class="hr">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div>
 	<!--<p><%# link_to("Add new comment!",new_main_path(0,@post_to_render2.id,0), class: "link") %></p>-->
@@ -14,10 +14,6 @@
 		<p><%= button_to "Add new comment!", new_main_dupa_path(0,@post_to_render2.id,0), class: "button" %></p>
 	</center>
 </div>
-
-<br />
-<br />
-
 <br />
 <br />
 <span class="all-posts-comments"><%= mains_tree_for @mains %></span>

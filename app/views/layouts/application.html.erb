@@ -2,39 +2,40 @@
 <html>
 <head>
 	<title><%= yield(:title) %></title>
-  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Merriweather:700' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Anton' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Cabin+Condensed:400,500,600' rel='stylesheet' type='text/css'>
+	<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<%= csrf_meta_tags %>
 	<link href='http://fonts.googleapis.com/css?family=Lato:400,100,300,900' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu:300italic,300,400,400italic,500italic,500,700,700italic' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <nav class="menu">
 	<div id="logo-margin-left"></div>
-	<div id="logo">MATTHEW KILAN<p id="font_opis">Programmer and entrepreneur</p></div>
+	
+	<div id="logo">
+		<!--<%# link_to(learn_webdeb_path, class: "logo-boss") do %>
+			<div style="color: white;">MATTHEW KILAN<p id="font_opis">Programmer and entrepreneur</p></div>
+		<%# end %> -->
+		<%= link_to(raw("<div class=\"omg\">MATTHEW KILAN</div> <br /> <div id=\"font_opis\">Programmer and entrepreneur</div>"), web_development_path) %>
+	</div>
+	
 	<div id="centerer">
 		<div id="whole_transitioning_menu">
 			<div class="distance-maker"></div>
-			<%= link_to(learn_webdeb_path) do %>
+			<%= link_to(web_development_path) do %>
 				<div class="menu_text web">Web development</div>
 			<% end %>
 			<div class="margin-maker"></div>
-			<%= link_to(motivation_path) do %>
-				<div class="menu_text motivation">Motivation</div>
-			<% end %>
-			<div class="margin-maker"></div>
-			<%= link_to(about_path) do %>
-				<div class="menu_text projects">Projects<br />& About</div>
+			<%= link_to(inspiring_path) do %>
+				<div class="menu_text motivation">Inspiring</div>
 			<% end %>
 			<div class="margin-maker"></div>
 			<%= link_to(books_courses_path) do %>
 				<div class="menu_text books">Books & Courses</div>
+			<% end %>
+			<div class="margin-maker"></div>
+			<%= link_to(about_path) do %>
+				<div class="menu_text projects">Projects<br />& About</div>
 			<% end %>
 			<div class="margin-maker"></div>
 			<%= link_to(contact_path) do %>
