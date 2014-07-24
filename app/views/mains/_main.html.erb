@@ -1,7 +1,7 @@
 <table class="table">
 	<tbody>
 		<tr>
-			<td rowspan="1" style="width: 100px;" ><%= image_tag(main.image_url, :alt => "Guest picture")%></td>
+			<td rowspan="1" style="width: 75px;" ><%= image_tag(main.image_url, :alt => "Guest picture", size: "75x75")%></td>
 			<td class="comment-name"><%= main.title %><br/><%= l(main.created_at, format: '%d %B %Y, %H:%M:%S')%></td>
 		</tr>
 		<tr>
@@ -12,9 +12,10 @@
 				<% from_reply_form ||= nil %>
 				<% unless from_reply_form %>
 					<% if main.leaf? %>
-						<small>There are no replies yet - be the first to reply!</small>
+						<small>There are no replies yet!</small>
 					<% end %>
-					<p><%= link_to "Reply", new_main_path(main.id,main.post_id,main.post_motivation_id) %></p>
+					<div><%= link_to "Reply", new_main_path(main.id,main.post_id,main.post_motivation_id) %></div>
+					<br />
 				<% end %>
 			</td>
 		</tr>

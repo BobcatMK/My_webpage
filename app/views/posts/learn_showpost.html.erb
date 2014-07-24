@@ -1,16 +1,25 @@
-<div class="post">	
-	<div class="post_title" style="font-family:'Lato'; font-weight:900; font-size: 3em; line-height: 0.6;"><%= @post_to_render2.title.upcase %><br /><span style="font-weight:100; font-size:0.5em;">Release date: <%= @post_to_render2.date %></span></div>
+<% content_for(:title,"MK #{@post_to_render2.title}") %>
+<%= stylesheet_link_tag("main_css/learn_showpost") %>
+
+<div class="post">
+	<div class="post_title" ><%= @post_to_render2.title.upcase %></div>
+	<div class="date">Release date: <%= @post_to_render2.date %></div>
 	<br />
-	<div class="short_desc" style="font-family:'Lato'; font-weight:300; font-size: 1.4em;">
+	<div class="long_desc">
 		<%= @post_to_render2.body %>
 	</div>
+	<div class="hr">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div>
+	<!--<p><%# link_to("Add new comment!",new_main_path(0,@post_to_render2.id,0), class: "link") %></p>-->
+	<center>
+		<p><%= button_to "Add new comment!", new_main_dupa_path(0,@post_to_render2.id,0), class: "button" %></p>
+	</center>
 </div>
-<div class="hr">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div>
+
 <br />
 <br />
-<%= link_to("Add new comment",new_main_path(0,@post_to_render2.id,0)) %>
+
 <br />
 <br />
-<%= mains_tree_for @mains %>
+<span class="all-posts-comments"><%= mains_tree_for @mains %></span>
 
 

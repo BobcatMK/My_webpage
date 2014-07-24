@@ -1,15 +1,17 @@
 <%= stylesheet_link_tag "main_css/motivation" %>
 <% content_for(:title, "MK Motivation") %>
 
-<% @post_all.each do |asdf| %>
-	<%= link_to "Show post", motivation_showpost_path(asdf.id) %>
-	<div class="post">
-		<div class="post_title" style="font-family:'Lato'; font-weight:900; font-size: 3em; line-height: 0.6;"><%= asdf.title.upcase %><br /><span style="font-weight:100; font-size:0.5em;">Release date: <%= asdf.date %></span></div>
-		<br />
-		<div class="short_desc" style="font-family:'Lato'; font-weight:300; font-size: 1.4em;">
-			<%= asdf.short %>
+<% @sort_rev.each do |asdf| %>
+	<%= link_to(motivation_showpost_path(asdf.id)) do %>
+		<div class="post">
+			<div class="post_title" >> <%= asdf.title.upcase %></div>
+			<div class="date">Release date: <%= asdf.date %></div>
+			<br />
+			<div class="short_desc">
+				<%= asdf.short %>
+			</div>
 		</div>
-	</div>
+	<% end %>
 	<div class="hr">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div>
 	<br />
 <% end %>

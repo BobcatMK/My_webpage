@@ -17,7 +17,7 @@ MyWebpage::Application.routes.draw do
 	# Route for form of mystory
 	patch "admin/mystory/(:id)", to: "mains#edit_mystory_admin",as: :edit_mystory_admin
 	# END OF MAINS CONTROLLER
-	
+	post '/mains/new/(:parent_id)/(:post_id)/(:post_motivation_id)', to: "mains#new", as: :new_main_dupa
 	
 	# POSTS CONTROLLER
   resources :posts

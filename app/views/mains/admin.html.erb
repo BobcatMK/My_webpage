@@ -5,7 +5,7 @@
 <%= link_to "Create new post", create_post_path %>
 <br />
 <br />
-<% @all_posts_webdevelopment.each do |post| %>
+<% @all_posts_webdevelopment.sort.reverse.each do |post| %>
 	<%= link_to (admin_webdev_path(post.id,true)) do %>
 		<table class="database_post">
 			<tr>
@@ -29,7 +29,7 @@
 <br />
 <br />
 
-<% @all_posts_motivation.each do |post| %>
+<% @all_posts_motivation.sort.reverse.each do |post| %>
 	<%= link_to (admin_webdev_path(post.id,false)) do %>
 		<table class="database_post">
 			<tr>

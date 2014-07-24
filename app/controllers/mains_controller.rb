@@ -2,16 +2,22 @@ class MainsController < ApplicationController
   before_action :authenticate, only: [:admin]
   
   def learn_webdeb
-    @mains = Main.hash_tree
     @post_all = Post.all
+    @sort_reverse = @post_all.sort.reverse
   end
 
   def new
     @main = Main.new(parent_id: params[:parent_id],post_id: params[:post_id],post_motivation_id: params[:post_motivation_id])
+    if params[:post_id].to_i > 0
+      @post_selected = Post.find(params[:post_id])
+    elsif params[:post_motivation_id].to_i > 0
+      @post_selected = PostMotivation.find(params[:post_motivation_id])
+    end
   end
 
   def motivation
-    @post_all = PostMotivation.all
+    @posts = PostMotivation.all
+    @sort_rev = @posts.sort.reverse
   end
 
   def about
@@ -35,19 +41,20 @@ class MainsController < ApplicationController
       @main = parent.children.build(main_params)
     else
       @main = Main.new(main_params)
+      @main.save
     end
     
     if @main.post_motivation_id > 0
       if @main.save
         redirect_to motivation_path
       else
-        redirect_to motivation_path
+        render :new
       end
     elsif @main.post_id > 0
       if @main.save
         redirect_to learn_webdeb_path
       else
-        redirect_to learn_webdeb_path
+        render :new
       end
     end
     
