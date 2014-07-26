@@ -5,7 +5,7 @@ But if you want to see it from the inside - then feel free to fork it and run it
 
 IMPORTANT INFO:
 
-Using:
+This application is using:
 
 Ruby 2.0.
 
