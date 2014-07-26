@@ -6,15 +6,21 @@ But if you want to see it from the inside - then feel free to fork it and run it
 IMPORTANT INFO:
 
 Using:
-Ruby 2.0
-Ruby on Rails 4.0.4
-Figaro gem
+
+Ruby 2.0.
+
+Ruby on Rails 4.0.4.
+
+Figaro gem.
 
 I've hidden all my passwords in application.yml file created by figaro gem , which for obvious reasons is not
 here on github. If you want to make it run, you have to create your application.yml file with help of figaro gem, or
 you can also just hardcode your passwords into my forked application.
 
 I used figaro gem for:
+
 1. Administator page access.
-2. Mailer (with use of mailchimp)
+
+2. Mailer (with use of mailchimp).
+
 3. Contact form.
