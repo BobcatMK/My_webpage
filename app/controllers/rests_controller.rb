@@ -86,7 +86,7 @@ class RestsController < ApplicationController
     end
     
     def contact_info_params
-      params.require(:contactinfo).permit(:name_surname,:facebook,:twitter,:phone_number,:email_address)
+      params.require(:contactinfo).permit(:name_surname,:facebook,:twitter,:phone_number,:email_address,:github)
     end
     
     def authenticate
