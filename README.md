@@ -10,8 +10,8 @@ Ruby 2.0
 Ruby on Rails 4.0.4
 Figaro gem
 
-I've hidden all my passwords in application.yml file created by figaro gem , which from obvious reasons is not
-here on github, want to make it run, you have to create your application.yml file with help of figaro gem, or
+I've hidden all my passwords in application.yml file created by figaro gem , which for obvious reasons is not
+here on github. If you want to make it run, you have to create your application.yml file with help of figaro gem, or
 you can also just hardcode your passwords into my forked application.
 
 I used figaro gem for:
