@@ -1,28 +1,20 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+My personal blog, want to see it in action you can visit it at <a href="http://www.matthew-kilan.com">www.matthew-kilan.com</a>
+But if you want to see it from the inside - then feel free to fork it and run it in your ide/text editor.
 
-Things you may want to cover:
+IMPORTANT INFO:
 
-* Ruby version
+Using:
+Ruby 2.0
+Ruby on Rails 4.0.4
+Figaro gem
 
-* System dependencies
+I've hidden all my passwords in application.yml file created by figaro gem , which from obvious reasons is not
+here on github, want to make it run, you have to create your application.yml file with help of figaro gem, or
+you can also just hardcode your passwords into my forked application.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+I used figaro gem for:
+1. Administator page access.
+2. Mailer (with use of mailchimp)
+3. Contact form.
