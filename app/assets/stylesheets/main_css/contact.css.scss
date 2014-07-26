@@ -5,15 +5,46 @@
   font-family:'Lato'; 
   font-weight:300; 
   font-size: 1.2em;
-  margin-left: 5%;
+  //margin-left: 5%;
+  margin:auto;
+  width: 58%;
+  //border: 1px solid blue;
+}
+.font2,
+.font3 {
+  font-family:'Lato'; 
+  font-weight:300; 
+  font-size: 1.2em;
+  margin-left: 0;
+}
+.font3 {
+  //border: 1px solid blue;
+  width: 50%
 }
 .divs {
   margin-bottom: 1%;
 }
 .contact_form {
   resize: none;
+  width: 98%;
+  height: 300px;
 }
 .contact_submit {
-  width: 379px;
+  width: 48.5%;
   height: 30px;
+}
+.newsletter_sing-up {
+  width: 100%;
+  height: 30px;
+}
+.newsletter {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 50%;
+}
+.size {
+  width: 98%;
+}
+.contact_size {
+  width: 98%;
 }

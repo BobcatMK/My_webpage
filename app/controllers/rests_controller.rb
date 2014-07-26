@@ -82,7 +82,7 @@ class RestsController < ApplicationController
     end
   
     def create_edit_product_final
-      params.require(:product).permit(:id,:name,:author,:price,:short_description,:long_description,:affiliate_link,:picture1,:picture2,:picture3,:picture4)  
+      params.require(:product).permit(:id,:name,:author,:price,:short_description,:long_description,:affiliate_link,:name_affiliate_link,:picture1,:picture2,:picture3,:picture4)  
     end
     
     def contact_info_params

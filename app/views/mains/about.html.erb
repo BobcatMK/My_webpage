@@ -18,12 +18,10 @@
 <% @all_projects.each do |project| %>
 	<div class="main-div font project-div">
 		<center>
-					<p>Project's name:</p>
-			<%= link_to(show_project_path(project.id)) do %>
-					<p>"<%= project.name %>"</p>
-			<% end %>
-					<p>Visit that webpage:<br /> <span class="ale"><%= link_to project.link, project.link %></span></p>
-					<p>Author: Matthew Kilan</p>
+			<p>Project's name:</p>
+			<p>"<%= project.name %>"</p>
+			<p>Visit that webpage:<br /> <span class="ale"><%= link_to project.link, project.link %></span></p>
+			<p>Author: Matthew Kilan</p>
 			<%= link_to(show_project_path(project.id)) do %>
 				<p>CLICK TO READ MORE</p>
 					<table>
