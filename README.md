@@ -1,6 +1,6 @@
 == README
 
-My personal blog, want to see it in action you can visit it at <a href="http://matthewkilan.herokuapp.com">www.matthew-kilan.com</a>
+My personal blog, want to see it in action you can visit it at <a href="http://matthewkilan.herokuapp.com">matthewkilan.herokuapp.com</a>
 But if you want to see it from the inside - then feel free to fork it and run it in your ide/text editor.
 
 IMPORTANT INFO:
