@@ -5,9 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+#
 #Contactinfo.create(name_surname: "Matthew Kilan",facebook: "https://www.facebook.com/mateusz.kilan",
- #                   twitter: "https://twitter.com/MateuszKilan1",email_address: "matthew.kilan@gmail.com",
- #                   phone_number: "790-680-882",github: "https://github.com/BobcatMK")
+#twitter: "https://twitter.com/MateuszKilan1",email_address: "matthew.kilan@gmail.com",phone_number: "790-680-882",github: "https://github.com/BobcatMK")
+#
+#Mystory.create(:id => 1,:name => "Matthew Kilan",:body => "Jak uslyszec siebie")
                     
                

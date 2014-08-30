@@ -4,6 +4,9 @@ source 'https://rubygems.org'
 ruby "2.0.0"
 gem 'rails', '4.0.4'
 
+# Application running unicorn both in development and production modes
+gem "unicorn"
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
@@ -48,7 +51,6 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
-  gem 'thin'
 end
 
 # Use ActiveModel has_secure_password
