@@ -116,7 +116,6 @@ class MainsController < ApplicationController
   
   def testonly
     # @main = Main.new(main_params)
-    
   end
   
   private
@@ -139,7 +138,7 @@ class MainsController < ApplicationController
     
     def authenticate
       authenticate_or_request_with_http_basic do |name, password|
-        name = ENV["ADMIN_LOGIN"] && password == ENV["ADMIN_PASSWORD"]
+        name = ENV["ADMIN_LOGIN"] && password = ENV["ADMIN_PASSWORD"]
       end
     end
     

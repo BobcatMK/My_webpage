@@ -12,9 +12,13 @@
 	<div class="hr">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</div>
 	<!--<p><%# link_to("Add new comment!",new_main_path(0,0,@post_to_render3.id), class: "link") %></p>-->
 	<center>
-		<p><%= button_to "Add new comment!", new_main_dupa_path(0,0,@post_to_render3.id), class: "button" %></p>
+		<!--  <p><%= button_to "Add new comment!", new_main_dupa_path(0,0,@post_to_render3.id), class: "button",id: "add_comment",js: true %></p> -->
+		<%= button_to new_main_dupa_path(0,0,@post_to_render3.id), class: "button",id: "add_comment" do %>
+			Add new comment!
+		<% end %>
 	</center>
 </div>	
+
 <br />
 <br />
 <span class="all-posts-comments"><%= mains_tree_for @mains %></span>

@@ -30,6 +30,11 @@ gem 'jbuilder', '~> 1.2'
 gem 'foundation-rails'
 gem 'closure_tree'
 
+group :development,:test do
+  gem "rspec-rails"
+  gem "capybara"
+end
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -42,6 +47,7 @@ gem 'figaro'
 gem 'gibbon'
 gem 'google_drive'
 gem 'simple_form'
+
 group :development do
   #gem 'better_errors'
   gem 'quiet_assets'

@@ -25,24 +25,24 @@
 	
 	<% if @main.errors.any? %>
 	
-	<% if @main.post_id.to_i > 0 %>
-    	<% @new_found_post = Post.find(@main.post_id) %>
-    <% elsif @main.post_motivation_id.to_i > 0 %>
-    	<% @new_found_post = PostMotivation.find(@main.post_motivation_id) %> 
-    <% end %>
-		<div>Post: <b><%= @new_found_post.title %></b></div>
-		<br />
-		<div class="border">
-			<div class="new-color"><%= pluralize(@main.errors.count, "error") %> prohibited this comment from being saved:</div>
-			<div>
-				<ul>
-					<% @main.errors.full_messages.each do |msg| %>
-						<li><div class="new-color"><%= msg %></div></li>
-					<% end %>
-				</ul>
+		<% if @main.post_id.to_i > 0 %>
+	    	<% @new_found_post = Post.find(@main.post_id) %>
+	    <% elsif @main.post_motivation_id.to_i > 0 %>
+	    	<% @new_found_post = PostMotivation.find(@main.post_motivation_id) %> 
+	    <% end %>
+			<div>Post: <b><%= @new_found_post.title %></b></div>
+			<br />
+			<div class="border">
+				<div class="new-color"><%= pluralize(@main.errors.count, "error") %> prohibited this comment from being saved:</div>
+				<div>
+					<ul>
+						<% @main.errors.full_messages.each do |msg| %>
+							<li><div class="new-color"><%= msg %></div></li>
+						<% end %>
+					</ul>
+				</div>
 			</div>
-		</div>
-		<br />
+			<br />
 	<% end %>
 	
 	<% if @main.parent %>

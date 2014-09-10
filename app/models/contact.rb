@@ -12,18 +12,36 @@ class Contact < ActiveRecord::Base
   validates_length_of(:content, :maximum => 500)
   
   def injection_to_spreadsheet
-    connection = GoogleDrive.login(ENV["GMAIL_USERNAME"], ENV["GMAIL_PASSWORD"])
-    ss = connection.spreadsheet_by_title("My_blog_contacts")
-    if ss.nil?
-      ss = connection.create_spreadsheet("My_blog_contacts")
+    
+    if Rails.env.production? || Rails.env.development?
+      connection = GoogleDrive.login(ENV["GMAIL_USERNAME"], ENV["GMAIL_PASSWORD"])
+      ss = connection.spreadsheet_by_title("messages")
+      if ss.nil?
+        ss = connection.create_spreadsheet("messages")
+      end
+      ws = ss.worksheets[0]
+      last_row = 1 + ws.num_rows
+      ws[last_row, 1] = Time.now
+      ws[last_row, 2] = self.name
+      ws[last_row, 3] = self.email
+      ws[last_row, 4] = self.content
+      ws.save
+    else 
+      connection = GoogleDrive.login(ENV["GMAIL_USERNAME"], ENV["GMAIL_PASSWORD"])
+      ss = connection.create_spreadsheet("test")
+      ws = ss.worksheets[0]
+      last_row = 1 + ws.num_rows
+      ws[last_row, 1] = Time.now
+      ws[last_row, 2] = self.name
+      ws[last_row, 3] = self.email
+      ws[last_row, 4] = self.content
+      ws.save
+      connection.spreadsheet_by_title("test").delete
+      if connection.spreadsheet_by_title("test") != nil
+        raise "ERROR Test failed: spreadsheet has not been deleted!"
+      end
     end
-    ws = ss.worksheets[0]
-    last_row = 1 + ws.num_rows
-    ws[last_row, 1] = Time.now
-    ws[last_row, 2] = self.name
-    ws[last_row, 3] = self.email
-    ws[last_row, 4] = self.content
-    ws.save
+    
   end
   
 end

@@ -15,5 +15,12 @@ class Mailinglist < ActiveRecord::Base
       :send_welcome => true
     })
     Rails.logger.info("Subscribed #{self.email} to MailChimp") if result
+    if Rails.env.test?
+      if mailchimp.lists.unsubscribe(:id => ENV["MAILCHIMP_LIST_ID"], :email => {:email => self.email}, :delete_member => true, :send_notify => true)
+        Rails.logger.info("TEST WAS SUCCESSFUL!")
+      else
+        raise "ERROR Test failed!"
+      end
+    end
   end
 end
