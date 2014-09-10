@@ -16,13 +16,4 @@ module HelpingForSakeOfHelping
     return "tested!"
   end
   
-  def http_login_password
-    user = 'username'
-    pw = 'password'
-    request.env['HTTP_AUTHORIZATION'] = ActionController::HttpAuthentication::Basic.encode_credentials(user,pw)
-    @env ||= {}
-    user = 'username'
-    pw = 'password'
-    @env['HTTP_AUTHORIZATION'] = ActionController::HttpAuthentication::Basic.encode_credentials(user,pw)
-  end
 end
